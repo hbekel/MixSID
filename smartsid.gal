@@ -1,0 +1,24 @@
+GAL16V8
+SMRTSID
+
+A5   A8   /IO1 /IO2 /CS RW MS NC NC GND
+NC   /CS1 /CS2 NC   NC  NC NC NC NC VCC
+
+CS1 = MS * CS +
+      /MS * CS * /A5 +
+      /MS * CS * /A8
+
+CS2 = MS * CS * /RW +
+      /MS * CS * A5 +
+      /MS * CS * A8 +
+      /MS * IO1 +
+      /MS * IO2
+
+DESCRIPTION:
+
+MS = MODE SELECT:
+   HIGH = PARALLEL, BOTH SIDS AT D400-D800
+   LOW  = STEREO, SID1 AT $D400, SID2 AT D420, D500, DE00*, DF00*
+   * (only if IO1 resp. IO2 are connected)
+   
+

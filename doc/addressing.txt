@@ -1,0 +1,83 @@
+There is only a single address control line called MODE SELECT (MS).
+
+Parallel Addressing Mode
+
+If MODE SELECT is HIGH, SID2 will be addressed in parallel with SID1
+each 32 bytes in $D400-D800 (as usual).
+
+In addition, SID2 will *only* be selected if RW is low, so the second
+sid will always be write-only when it appears in parallel with
+SID1. This way read accesses (for paddles and music effects) will only
+ever read from SID1.
+
+Orthogonal Addressing Mode
+
+If MODE SELECT is LOW, SID1 and SID2 will be addressed as shown in the
+table below.
+
+The defacto standard for stereo SID tunes is to address the second
+sid either at $D420 or at $D500. In this scheme, the SID2 will always
+appear at both of these addresses (among others), and SID1 is
+garanteed *not* to appear at any of the addresses that SID2 appears
+at. In addition, SID2 will be read-write.
+
+If the user wants the second SID to also appear in the IO areas DE00
+and/or DF00 in this addressing mode, all that is required is to
+connect the corresponding signals (IO1 and IO2) in addition to A5 and
+A8. This will allow the board to be used with systems like
+prophet/mssiah, which expect the SID at these addresses.
+
+-----------------------
+|ADDR  | SID1 | SID2  |
+|---------------------|
+| $D400 |  X   |      |  
+| $D420 |      |  X   | <- $D420
+| $D440 |  X   |      |  
+| $D460 |      |  X   |  
+| $D480 |  X   |      |  
+| $D4A0 |      |  X   |  
+| $D4C0 |  X   |      |  
+| $D4E0 |      |  X   |  
+| $D500 |      |  X   | <- $D500
+| $D520 |      |  X   |  
+| $D540 |      |  X   |  
+| $D560 |      |  X   |  
+| $D580 |      |  X   |  
+| $D5A0 |      |  X   |  
+| $D5C0 |      |  X   |  
+| $D5E0 |      |  X   |  
+| $D600 |  X   |      |  
+| $D620 |      |  X   |  
+| $D640 |  X   |      |  
+| $D660 |      |  X   |  
+| $D680 |  X   |      |  
+| $D6A0 |      |  X   |  
+| $D6C0 |  X   |      |  
+| $D6E0 |      |  X   |  
+| $D700 |      |  X   |  
+| $D720 |      |  X   |  
+| $D740 |      |  X   |  
+| $D760 |      |  X   |  
+| $D780 |      |  X   |  
+| $D7A0 |      |  X   |  
+| $D7C0 |      |  X   |  
+| $D7E0 |      |  X   |
+|---------------------|
+| $DE00 |      |  X   | optional (connect /IO1)
+| $DF00 |      |  X   | optional (connect /IO2)
+-----------------------
+
+Rationale
+
+This solution removes the need for multiple jumper configurations to
+select the adress of SID2. Instead of using one jumper setting for
+each of the possible/desired addresses for SID2, only a single control
+line can be used. A simple SPST switch may be used to pull MS low. If
+the switch is open, the internal input pullup of the GAL will drive it
+high.
+
+Another advantage over a jumper solution is that the CS signals are
+guaranteed to be connected and there is no chance of the CS pins to
+float. (If the SID CS line is floating, it will be asserted randomly
+and the SID will feel compelled to put data on the bus at any time,
+causing almost certain lock ups on a running machine).
