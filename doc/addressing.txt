@@ -67,13 +67,21 @@ prophet/mssiah, which expect the SID at these addresses.
 | $DF00 |      |  X   | optional (connect /IO2)
 -----------------------
 
+Priority Select
+
+Another Control line called PRIORITY SELECT (PS) will select which of
+the physical SID chips will be placed at the stereo locations of the
+orthogonal adressing mode. 
+
 Rationale
 
 This solution removes the need for multiple jumper configurations to
 select the adress of SID2. Instead of using one jumper setting for
 each of the possible/desired addresses for SID2, only a single control
-line can be used. A simple SPST switch may be used to pull MS low. If
-the switch is open, the internal input pullup of the GAL will drive it
+line can be used. When in stereo mode, the second SID will simply
+appear at all common locations at once. A simple SPST switch may thus
+be used to pull MS low and activate orthogonal addressing. If the
+switch is open, the internal input pullup of the GAL will drive it
 high.
 
 Another advantage over a jumper solution is that the CS signals are
@@ -81,3 +89,11 @@ guaranteed to be connected and there is no chance of the CS pins to
 float. (If the SID CS line is floating, it will be asserted randomly
 and the SID will feel compelled to put data on the bus at any time,
 causing almost certain lock ups on a running machine).
+
+Problems:
+
+Priority Select -- Is this really necessary? Consult HVSC -- how many
+stereo tunes are there which explicitly use different models? Also
+paddles: If priority is swapped, the paddles won't be connected --
+stereoInSID offers POTX/Y of SID2 as a separate PORT to connect more
+paddles. Does anybody need this/use this?

@@ -1,24 +1,36 @@
 GAL16V8
 SMRTSID
 
-A5   A8   /IO1 /IO2 /CS RW MS NC NC GND
-NC   /CS1 /CS2 NC   NC  NC NC NC NC VCC
+A5   A8   /IO1  /IO2 /CS  RW   MS   PS NC GND
+NC   CSI1 CSO1  CSI2 CSO2 /CS1 /CS2 NC NC VCC
 
-CS1 = MS * CS +
+CSO1 = MS * CS +
       /MS * CS * /A5 +
       /MS * CS * /A8
 
-CS2 = MS * CS * /RW +
+CSO2 = MS * CS * /RW +
       /MS * CS * A5 +
       /MS * CS * A8 +
       /MS * IO1 +
       /MS * IO2
 
+CS1 = PS * CSI1 +
+      /PS * CSI2
+
+CS2 = PS * CSI2 +
+      /PS * CSI1
+
 DESCRIPTION:
 
 MS = MODE SELECT:
+
    HIGH = PARALLEL, BOTH SIDS AT D400-D800
    LOW  = STEREO, SID1 AT $D400, SID2 AT D420, D500, DE00*, DF00*
    * (only if IO1 resp. IO2 are connected)
    
+PS = PRIORITY SELECT, select SID at stereo locations in STEREO mode
 
+   HIGH = NORMAL  (SID2 addressed at stereo locations)
+   LOW  = SWAPPED (SID1 addressed at stereo locations)
+   
+CSO1, CSO2 -> connect externally to CSI1, CSI2
