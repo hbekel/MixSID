@@ -8,5 +8,8 @@ all: $(PROJECT).jed
 %.jed: %.gal
 	$(ASM) $(ASMFLAGS) $<
 
+%.chp: %.gal
+	$(ASM) -f -p $<
+
 clean:
 	rm $(PROJECT).jed

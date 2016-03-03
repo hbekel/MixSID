@@ -1,1 +1,4 @@
 *.jed
+*.bak
+*.bck
+*.kicad_pcb-bak
