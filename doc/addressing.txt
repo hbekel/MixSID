@@ -1,6 +1,27 @@
-There is only a single address control line called MODE SELECT (MS).
+Proposal for an addressing scheme in a dual sid solution for the C64
+====================================================================
+
+There are three address control lines in this scheme, although only
+one line is strictly required for basic operation of SID2 at the most
+commonly used addresses for stereo sid tunes.
+
+The MODE SELECT (MS) line controls the addressing mode, while the IO
+ENABLE (IE) line controls whether or not the second SID appears at
+$DE00 or $DF00 when in orthogonal (stereo) addressing mode (given that
+the corresponding signals IO1 and IO2 are connected at all).
+
+Finally, the PRIORITY SELECT line can optionally be used to control
+which physical SID chip is put at stereo addresses in orthogonal
+(stereo) addressing mode and which one remains at $d400
+(i.e. virtually swap the chips).
+
+MODE SELECT
+===========
+
+The available addressing modes controled by MODE SELECT are:
 
 Parallel Addressing Mode
+========================
 
 If MODE SELECT is HIGH, SID2 will be addressed in parallel with SID1
 each 32 bytes in $D400-D800 (as usual).
@@ -11,21 +32,20 @@ SID1. This way read accesses (for paddles and music effects) will only
 ever read from SID1.
 
 Orthogonal Addressing Mode
+==========================
 
 If MODE SELECT is LOW, SID1 and SID2 will be addressed as shown in the
 table below.
 
-The defacto standard for stereo SID tunes is to address the second
-sid either at $D420 or at $D500. In this scheme, the SID2 will always
-appear at both of these addresses (among others), and SID1 is
-garanteed *not* to appear at any of the addresses that SID2 appears
-at. In addition, SID2 will be read-write.
+In this addressing scheme, the second SID will always appear at *all*
+of the common stereo addresses *at once* (so that a SID tune will find
+the second sid regardless of whether it expects it at d420, d500, de00
+or df00). Most importantly, the first SID is guaranteed *not* to appear
+at any of the addresses that SID2 appears at.
 
-If the user wants the second SID to also appear in the IO areas DE00
-and/or DF00 in this addressing mode, all that is required is to
-connect the corresponding signals (IO1 and IO2) in addition to A5 and
-A8. This will allow the board to be used with systems like
-prophet/mssiah, which expect the SID at these addresses.
+In addition, SID2 will become fully read-write again when addressed
+orthogonal to SID1, as opposed to parallel addressing where it is
+forced write-only.
 
 -----------------------
 |ADDR  | SID1 | SID2  |
@@ -63,37 +83,107 @@ prophet/mssiah, which expect the SID at these addresses.
 | $D7C0 |      |  X   |  
 | $D7E0 |      |  X   |
 |---------------------|
-| $DE00 |      |  X   | optional (connect /IO1)
-| $DF00 |      |  X   | optional (connect /IO2)
+| $DE00 |      |  X   | optional (connect /IO1, use IE=low to disable)
+| $DF00 |      |  X   | optional (connect /IO2, use IE=low to disable)
 -----------------------
 
-Priority Select
+IO ENABLE
+=========
 
-Another Control line called PRIORITY SELECT (PS) will select which of
-the physical SID chips will be placed at the stereo locations of the
-orthogonal adressing mode. 
+Since using the common IO areas IO1 and IO2 ($DE00 and $DF00) for SID2
+may cause conflicts with other hardware using these areas (such as
+freezer cartridges), the IO ENABLE signal can be used to
+enable/disable these addresses when in orthogonal mode.
+
+This allows the user to keep the option of using solutions like
+PROPHET/MSSIAH that use the io areas for SID2. If these addresses are
+required temporarily, the user may permanently connect IO1 and IO2 and
+simply control their application via the IE signal. If these addresses
+are not needed at all, the user can opt to simply not connect the IE,
+IO1 and IO2 lines.
+
+PRIORITY SELECT
+===============
+
+Another control signal called PRIORITY SELECT (PS) will select which
+of the physical SID chips will be placed at the stereo locations of
+the orthogonal adressing mode, i.e. it will switch the roles of SID1
+and SID2 as depicted in the table above. If this is not needed, the PS
+line may simply stay unconnected.
 
 Rationale
+=========
 
 This solution removes the need for multiple jumper configurations to
-select the adress of SID2. Instead of using one jumper setting for
-each of the possible/desired addresses for SID2, only a single control
-line can be used. When in stereo mode, the second SID will simply
-appear at all common locations at once. A simple SPST switch may thus
-be used to pull MS low and activate orthogonal addressing. If the
-switch is open, the internal input pullup of the GAL will drive it
-high.
+select the adress of SID2, which have to be changed manually (via
+jumpers or (rotary) switches), or controlled with additional custom
+hardware which multiplexes the lines accordingly (e.g. virtualizing
+the jumper settings).
 
-Another advantage over a jumper solution is that the CS signals are
-guaranteed to be connected and there is no chance of the CS pins to
-float. (If the SID CS line is floating, it will be asserted randomly
-and the SID will feel compelled to put data on the bus at any time,
-causing almost certain lock ups on a running machine).
+Instead, all three lines are digital control lines. If they are not
+connected, they are driven high by the internal pullups of the
+16V8. The logic has been designed to use the most common setting as
+the default when the signal is high.
 
-Problems:
+This allows the user to use a simple SPST switch to ground if he
+wishes to control one of these lines.
 
-Priority Select -- Is this really necessary? Consult HVSC -- how many
-stereo tunes are there which explicitly use different models? Also
-paddles: If priority is swapped, the paddles won't be connected --
-stereoInSID offers POTX/Y of SID2 as a separate PORT to connect more
-paddles. Does anybody need this/use this?
+Using digital control signals also means that switching between modes
+may happen at runtime because the CS signals of both sids are
+guaranteed to be driven correctly at all times. (If naively using
+jumpers or a rotary switch, the CS lines of the SIDs are likely to
+float during switching and the SIDs will feel compelled to put data on
+the bus at random, causing the C64 to crash).
+
+Implementation
+==============
+
+Here is a first draft of the 16v8 GAL logic equotations required to
+implement this scheme:
+
+GAL16V8
+SMRTSID
+
+A5   A8   /IO1  /IO2 /CS  RW   MS   PS  /IE GND
+NC   CSI1 CSO1  CSI2 CSO2 /CS1 /CS2 NC  NC  VCC
+
+CSO1 = MS * CS +
+      /MS * CS * /A5 +
+      /MS * CS * /A8
+
+CSO2 = MS * CS * /RW +
+      /MS * CS * A5 +
+      /MS * CS * A8 +
+      /MS * CS * IE * IO1 +
+      /MS * CS * IE * IO2
+
+CS1 = PS * CSI1 +
+      /PS * CSI2
+
+CS2 = PS * CSI2 +
+      /PS * CSI1
+
+DESCRIPTION:
+
+A5, A8, IO1, IO2, RW, CS = C64 input signals
+MS, PS, IE               = control signals
+CS1, CS2                 = chip select outputs SID1, SID2
+
+CSO1, CSO2 -> connect externally to CSI1, CSI2
+
+MS = MODE SELECT:
+
+   HIGH = PARALLEL, BOTH SIDS AT D400-D800
+   LOW  = STEREO, SID1 AT $D400, SID2 AT D420, D500, DE00*, DF00*
+   * (only if IO1 resp. IO2 are connected and IE=low)
+   
+PS = PRIORITY SELECT, select SID at stereo locations in STEREO mode
+
+   HIGH = NORMAL  (SID2 addressed at stereo locations)
+   LOW  = SWAPPED (SID1 addressed at stereo locations)
+
+IE = IO ENABLE
+
+   HIGH: Second SID also at IO areas ($DE00, $DF00)
+   LOW:  Prevent SID2 from appearing in IO area
+      
