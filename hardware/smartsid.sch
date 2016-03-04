@@ -464,7 +464,7 @@ F 3 "" H 3400 7250 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 Text Label 2800 6950 2    60   ~ 0
-+9VUNREG
++16V
 $Comp
 L C_Small C7
 U 1 1 56D8F782
@@ -509,8 +509,6 @@ F 3 "" H 1250 1100 60  0000 C CNN
 	1    1250 1100
 	1    0    0    -1  
 $EndComp
-Text Label 1050 1300 2    60   ~ 0
-+9VUNREG
 $Comp
 L CONN_01X28 P4
 U 1 1 56D96DFF
@@ -1185,6 +1183,10 @@ Text Label 1050 2000 2    60   ~ 0
 M0
 Text Label 1050 2100 2    60   ~ 0
 M1
-Text Notes 4000 7550 2    60   ~ 0
-Only required on new boards
+Text Notes 3700 7600 2    60   ~ 0
+Only required on 250469
+Text Notes 2200 7250 0    60   ~ 0
+from positive \nlead of C66\non 250469
+Text Label 1050 1300 2    60   ~ 0
++16V
 $EndSCHEMATC
