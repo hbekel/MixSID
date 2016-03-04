@@ -111,6 +111,11 @@ the orthogonal adressing mode, i.e. it will switch the roles of SID1
 and SID2 as depicted in the table above. If this is not needed, the PS
 line may simply stay unconnected.
 
+One drawback of this solution is that the paddles connected to the
+control ports will not work in stereo addressing mode with switched
+priority. It should be considered whether it is really neccessary to
+provide a pin header for the second (physical) sid's pot lines at all.
+
 Rationale
 =========
 
