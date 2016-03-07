@@ -1,8 +1,8 @@
 GAL16V8
 SMRTSID
 
-A5   A8   /IO1 /IO2 /CS  RW   MS   PS  IO GND
-NC   CSI1 CSO1 CSI2 CSO2 /CS1 /CS2 NC  NC  VCC
+A5   A8   /IO1 /IO2 /CS  RW   MS   PS  IO1EN GND
+NC   CSI1 CSO1 CSI2 CSO2 /CS1 /CS2 NC  IO2EN  VCC
 
 CSO1 = MS * CS +
       /MS * CS * /A5 +
@@ -11,8 +11,8 @@ CSO1 = MS * CS +
 CSO2 = MS * CS * /RW +
       /MS * CS * A5 +
       /MS * CS * A8 +
-      /MS * CS * IO * IO1 +
-      /MS * CS * IO * IO2
+      /MS * CS * IO1EN * IO1 +
+      /MS * CS * IO2EN * IO2
 
 CS1 = PS * CSI1 +
       /PS * CSI2
@@ -23,7 +23,7 @@ CS2 = PS * CSI2 +
 DESCRIPTION:
 
 A5, A8, IO1, IO2, RW, CS = C64 input signals
-MS, PS, IO               = control signals
+MS, PS, IO1EN, IO2EN     = control signals
 CS1, CS2                 = chip select outputs SID1, SID2
 
 CSO1, CSO2 -> connect externally to CSI1, CSI2
@@ -39,8 +39,8 @@ PS = PRIORITY SELECT, select SID at stereo locations in STEREO mode
    HIGH = NORMAL  (SID2 addressed at stereo locations)
    LOW  = SWAPPED (SID1 addressed at stereo locations)
 
-IO = IO ENABLE
+IO1EN, IO2EN = IO ENABLE lines
 
-   HIGH: Second SID also at IO areas ($DE00, $DF00)
-   LOW:  Prevent SID2 from appearing in IO area
+   HIGH: Second SID also at the corresponding address
+   LOW:  Prevent SID2 at the corresponding address
       
