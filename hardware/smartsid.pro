@@ -1,4 +1,4 @@
-update=03.03.2016 15:29:55
+update=07.03.2016 12:08:13
 version=1
 last_client=kicad
 [pcbnew]
@@ -60,3 +60,4 @@ LibName28=valves
 LibName29=lib/mos6581
 LibName30=lib/smartsid
 LibName31=lib/lm78xx
+LibName32=lib/7660
