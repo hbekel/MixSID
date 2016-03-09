@@ -37,11 +37,11 @@ EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
-Title ""
-Date ""
-Rev ""
-Comp ""
-Comment1 ""
+Title "SmartSID - C64 stereo SID addon board"
+Date "2016-03-09"
+Rev "1"
+Comp "Henning Bekel"
+Comment1 "www.henning-bekel.de/smartsid"
 Comment2 ""
 Comment3 ""
 Comment4 ""
@@ -949,9 +949,9 @@ F 3 "" H 4700 5250 60  0000 C CNN
 	1    4700 5250
 	0    1    1    0   
 $EndComp
-Text Label 4700 5450 2    60   ~ 0
+Text Label 3900 5450 2    60   ~ 0
 M0
-Text Label 4700 5550 2    60   ~ 0
+Text Label 3900 5550 2    60   ~ 0
 M1
 $Comp
 L GND #PWR024
@@ -1277,4 +1277,56 @@ Text Label 1300 7650 0    60   ~ 0
 +12V
 Text Label 3850 6950 0    60   ~ 0
 PWR
+$Comp
+L R R7
+U 1 1 56E0803A
+P 4050 5300
+F 0 "R7" V 4130 5300 50  0000 C CNN
+F 1 "4k7" V 4050 5300 50  0000 C CNN
+F 2 "Discret:R3" V 3980 5300 30  0001 C CNN
+F 3 "" H 4050 5300 30  0000 C CNN
+	1    4050 5300
+	1    0    0    -1  
+$EndComp
+$Comp
+L R R8
+U 1 1 56E0814A
+P 4200 5300
+F 0 "R8" V 4280 5300 50  0000 C CNN
+F 1 "4k7" V 4200 5300 50  0000 C CNN
+F 2 "Discret:R3" V 4130 5300 30  0001 C CNN
+F 3 "" H 4200 5300 30  0000 C CNN
+	1    4200 5300
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3900 5450 4700 5450
+Connection ~ 4050 5450
+Wire Wire Line
+	3900 5550 4700 5550
+Connection ~ 4200 5550
+$Comp
+L VCC #PWR029
+U 1 1 56E083EC
+P 4050 5150
+F 0 "#PWR029" H 4050 5000 50  0001 C CNN
+F 1 "VCC" H 4050 5300 50  0000 C CNN
+F 2 "" H 4050 5150 60  0000 C CNN
+F 3 "" H 4050 5150 60  0000 C CNN
+	1    4050 5150
+	1    0    0    -1  
+$EndComp
+$Comp
+L VCC #PWR030
+U 1 1 56E08491
+P 4200 5150
+F 0 "#PWR030" H 4200 5000 50  0001 C CNN
+F 1 "VCC" H 4200 5300 50  0000 C CNN
+F 2 "" H 4200 5150 60  0000 C CNN
+F 3 "" H 4200 5150 60  0000 C CNN
+	1    4200 5150
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4200 5550 4200 5450
 $EndSCHEMATC

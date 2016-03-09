@@ -56,6 +56,7 @@
     )
     (component Pin_Headers:Pin_Header_Straight_1x02
       (place JP9 175260 -74930 front 180 (PN NR1))
+      (place JP8 172720 -74930 front 180 (PN NR2))
     )
     (component Pin_Headers:Pin_Header_Straight_1x05
       (place P1 132080 -123190 front 90 (PN INPUT))
@@ -98,9 +99,12 @@
       (place JP5 165100 -71120 front 0 (PN SUPPLY1))
       (place JP6 160020 -71120 front 0 (PN S1CAP2))
       (place JP7 162560 -71120 front 0 (PN S1CAP1))
-      (place JP8 172720 -74930 front 180 (PN NR2))
       (place P3 168910 -76200 front 180 (PN POT2))
       (place P5 170180 -123190 front 90 (PN OUTPUT))
+    )
+    (component Discret:R3
+      (place R7 157480 -111760 front 0 (PN 4k7))
+      (place R8 157480 -109220 front 0 (PN 4k7))
     )
   )
   (library
@@ -331,6 +335,18 @@
       (pin Round[A]Pad_1727.2_um 2 0 -2540)
       (pin Round[A]Pad_1727.2_um 3 0 -5080)
     )
+    (image Discret:R3
+      (outline (path signal 150  -3810 0  -3302 0))
+      (outline (path signal 150  3810 0  3302 0))
+      (outline (path signal 150  3302 0  3302 1016))
+      (outline (path signal 150  3302 1016  -3302 1016))
+      (outline (path signal 150  -3302 1016  -3302 -1016))
+      (outline (path signal 150  -3302 -1016  3302 -1016))
+      (outline (path signal 150  3302 -1016  3302 0))
+      (outline (path signal 150  -3302 508  -2794 1016))
+      (pin Round[A]Pad_1397_um 1 -3810 0)
+      (pin Round[A]Pad_1397_um 2 3810 0)
+    )
     (padstack Round[A]Pad_1300_um
       (shape (circle F.Cu 1300))
       (shape (circle B.Cu 1300))
@@ -413,7 +429,7 @@
     )
     (net GND
       (pins C5-2 C6-2 C7-2 C8-2 C18-1 JP9-2 P4-14 R1-2 R2-2 R4-2 R6-2 U1-10 U2-14
-        U3-2 U4-2 U5-14 U6-6 U6-8 U7-4 U8-3 JP8-2 P3-3 P5-1)
+        U3-2 U4-2 U5-14 U6-6 U6-8 U7-4 U8-3 P3-3 P5-1 JP8-2)
     )
     (net /+9V
       (pins C8-1 U4-3 JP1-3 JP5-3)
@@ -503,7 +519,7 @@
       (pins U1-18)
     )
     (net VCC
-      (pins P4-25 U1-20 U2-25 U5-25 U8-8)
+      (pins P4-25 U1-20 U2-25 U5-25 U8-8 R7-1 R8-1)
     )
     (net /~RES
       (pins P4-5 U2-5 U5-5)
@@ -608,10 +624,10 @@
       (pins C16-2 U7-6 U7-7)
     )
     (net /M0
-      (pins P2-5 U6-10)
+      (pins P2-5 U6-10 R7-2)
     )
     (net /M1
-      (pins P2-6 U6-9)
+      (pins P2-6 U6-9 R8-2)
     )
     (net "Net-(R3-Pad1)"
       (pins R3-1 U7-3)
