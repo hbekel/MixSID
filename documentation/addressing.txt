@@ -9,11 +9,9 @@ The MODE SELECT (MS) line controls the addressing mode, while the IO
 ENABLE (IO1EN/IO2EN) lines control whether or not the second SID
 appears at $DE00 or $DF00 when in orthogonal (stereo) addressing mode
 (given that the corresponding signals IO1 and IO2 are connected at
-all).
-
-Finally, the PRIORITY SELECT line can optionally be used to control
-which physical SID chip is put at stereo addresses in orthogonal
-(stereo) addressing mode and which one remains at $d400
+all). Finally, the PRIORITY SELECT line can optionally be used to
+control which physical SID chip is put at stereo addresses in
+orthogonal (stereo) addressing mode and which one remains at $d400
 (i.e. virtually swap the chips in terms of addressing).
 
 MODE SELECT
@@ -129,7 +127,9 @@ the jumper settings).
 Instead, all three lines are digital control lines. If they are not
 connected, they are driven high by the internal pullups of the
 16V8. The logic has been designed to use the most common setting as
-the default when the signal is high.
+the default when the signal is high. Leaving all three control lines
+high implies parallell adressing, inclusion of $de00/$df00 and normal
+priority.
 
 This allows the user to use a simple SPST switch to ground if he
 wishes to control one of these lines.
