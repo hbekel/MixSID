@@ -1,0 +1,14 @@
+The smartsid board will feature on board op-amp based output circuits
+for both sids as well as an audio mixer that controls which signals
+finally end up at the stereo output pins.
+
+Two control signals (M0 and M1) will be provided that control the
+different mixing options:
+
+ M0 | M1 | Left | Right
+----|----|------|------|
+ 0  | 0  | SID1 | SID1 | (first SID mono)
+ 0  | 1  | SID2 | SID2 | (second SID mono)
+ 1  | 0  | SID1 | SID2 | (first SID left, second SID right)
+ 1  | 1  | SID2 | SID1 | (first SID right, second SID left)
+

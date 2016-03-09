@@ -226,7 +226,7 @@ U 1 1 56D85522
 P 1250 2800
 F 0 "P3" H 1250 3000 50  0000 C CNN
 F 1 "POT2" V 1350 2800 50  0000 C CNN
-F 2 "Pin_Headers:Pin_Header_Straight_1x03" H 1250 2800 60  0001 C CNN
+F 2 "Pinheaders:Pin_Header_Straight_1x03" H 1250 2800 60  0001 C CNN
 F 3 "" H 1250 2800 60  0000 C CNN
 	1    1250 2800
 	1    0    0    -1  
@@ -256,7 +256,7 @@ U 1 1 56D86A31
 P 4300 2650
 F 0 "JP2" H 4350 2550 50  0000 L CNN
 F 1 "S2CAP2" H 4300 2750 50  0000 C BNN
-F 2 "Pin_Headers:Pin_Header_Straight_1x03" H 4300 2650 60  0001 C CNN
+F 2 "Pinheaders:Pin_Header_Straight_1x03" H 4300 2650 60  0001 C CNN
 F 3 "" H 4300 2650 60  0000 C CNN
 	1    4300 2650
 	0    1    1    0   
@@ -289,7 +289,7 @@ U 1 1 56D873FE
 P 4300 3300
 F 0 "JP3" H 4350 3200 50  0000 L CNN
 F 1 "S2CAP1" H 4300 3400 50  0000 C BNN
-F 2 "Pin_Headers:Pin_Header_Straight_1x03" H 4300 3300 60  0001 C CNN
+F 2 "Pinheaders:Pin_Header_Straight_1x03" H 4300 3300 60  0001 C CNN
 F 3 "" H 4300 3300 60  0000 C CNN
 	1    4300 3300
 	0    1    1    0   
@@ -322,7 +322,7 @@ U 1 1 56D8927C
 P 7300 2700
 F 0 "JP6" H 7350 2600 50  0000 L CNN
 F 1 "S1CAP2" H 7300 2800 50  0000 C BNN
-F 2 "Pin_Headers:Pin_Header_Straight_1x03" H 7300 2700 60  0001 C CNN
+F 2 "Pinheaders:Pin_Header_Straight_1x03" H 7300 2700 60  0001 C CNN
 F 3 "" H 7300 2700 60  0000 C CNN
 	1    7300 2700
 	0    1    1    0   
@@ -355,7 +355,7 @@ U 1 1 56D8928E
 P 7300 3350
 F 0 "JP7" H 7350 3250 50  0000 L CNN
 F 1 "S1CAP1" H 7300 3450 50  0000 C BNN
-F 2 "Pin_Headers:Pin_Header_Straight_1x03" H 7300 3350 60  0001 C CNN
+F 2 "Pinheaders:Pin_Header_Straight_1x03" H 7300 3350 60  0001 C CNN
 F 3 "" H 7300 3350 60  0000 C CNN
 	1    7300 3350
 	0    1    1    0   
@@ -388,7 +388,7 @@ U 1 1 56D89887
 P 4150 1350
 F 0 "JP1" H 4200 1250 50  0000 L CNN
 F 1 "SUPPLY2" H 4150 1450 50  0000 C BNN
-F 2 "Pin_Headers:Pin_Header_Straight_1x03" H 4150 1350 60  0001 C CNN
+F 2 "Pinheaders:Pin_Header_Straight_1x03" H 4150 1350 60  0001 C CNN
 F 3 "" H 4150 1350 60  0000 C CNN
 	1    4150 1350
 	0    1    1    0   
@@ -403,7 +403,7 @@ U 1 1 56D8AC84
 P 7150 1400
 F 0 "JP5" H 7200 1300 50  0000 L CNN
 F 1 "SUPPLY1" H 7150 1500 50  0000 C BNN
-F 2 "Pin_Headers:Pin_Header_Straight_1x03" H 7150 1400 60  0001 C CNN
+F 2 "Pinheaders:Pin_Header_Straight_1x03" H 7150 1400 60  0001 C CNN
 F 3 "" H 7150 1400 60  0000 C CNN
 	1    7150 1400
 	0    1    1    0   
@@ -418,7 +418,7 @@ U 1 1 56D8B86A
 P 4150 6950
 F 0 "JP4" H 4200 6850 50  0000 L CNN
 F 1 "BOARD" H 4150 7050 50  0000 C BNN
-F 2 "Pin_Headers:Pin_Header_Straight_1x03" H 4150 6950 60  0001 C CNN
+F 2 "Pinheaders:Pin_Header_Straight_1x03" H 4150 6950 60  0001 C CNN
 F 3 "" H 4150 6950 60  0000 C CNN
 	1    4150 6950
 	1    0    0    -1  
@@ -784,7 +784,7 @@ U 1 1 56DA6151
 P 850 3450
 F 0 "P5" H 850 3650 50  0000 C CNN
 F 1 "OUTPUT" V 950 3450 50  0000 C CNN
-F 2 "Pin_Headers:Pin_Header_Straight_1x03" H 850 3450 60  0001 C CNN
+F 2 "Pinheaders:Pin_Header_Straight_1x03" H 850 3450 60  0001 C CNN
 F 3 "" H 850 3450 60  0000 C CNN
 	1    850  3450
 	-1   0    0    1   

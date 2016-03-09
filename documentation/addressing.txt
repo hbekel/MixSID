@@ -82,8 +82,8 @@ forced write-only.
 | $D7C0 |      |  X   |  
 | $D7E0 |      |  X   |
 |---------------------|
-| $DE00 |      |  X   | optional (connect /IO1, use IO=low to disable)
-| $DF00 |      |  X   | optional (connect /IO2, use IO=low to disable)
+| $DE00 |      |  X   | optional (connect /IO1, use IO1=low to disable)
+| $DF00 |      |  X   | optional (connect /IO2, use IO2=low to disable)
 -----------------------
 
 IO ENABLE
@@ -112,8 +112,9 @@ line may simply stay unconnected.
 
 One drawback of this solution is that the paddles connected to the
 control ports will not work in stereo addressing mode with switched
-priority. It should be considered whether it is really neccessary to
-provide a pin header for the second (physical) sid's pot lines at all.
+priority. Instead, the paddles connected to the optional onboard pin
+header providing POTX and POTY of SID2 (if any) will now be read at
+$d4xx.
 
 Rationale
 =========
@@ -181,7 +182,7 @@ MS = MODE SELECT:
 
    HIGH = PARALLEL, BOTH SIDS AT D400-D800
    LOW  = STEREO, SID1 AT $D400, SID2 AT D420, D500, DE00*, DF00*
-   * (only if IO1 resp. IO2 are connected and IE=low)
+   * (only if IO1 resp. IO2 are connected and IOnEN=low)
    
 PS = PRIORITY SELECT, select SID at stereo locations in STEREO mode
 
