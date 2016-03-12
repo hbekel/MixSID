@@ -524,10 +524,10 @@
       (pins U1-8 P2-2)
     )
     (net /POT2X
-      (pins U5-24 P3-1)
+      (pins U2-24 P3-1)
     )
     (net /POT2Y
-      (pins U5-23 P3-2)
+      (pins U2-23 P3-2)
     )
     (net /~CS
       (pins P4-8 U1-5)
@@ -602,10 +602,10 @@
       (pins P4-22 U2-22 U5-22)
     )
     (net /POTY
-      (pins P4-23 U2-23)
+      (pins P4-23 U5-23)
     )
     (net /POTX
-      (pins P4-24 U2-24)
+      (pins P4-24 U5-24)
     )
     (net VDD
       (pins P4-28 U6-16 JP4-3)
