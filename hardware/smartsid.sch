@@ -510,92 +510,81 @@ F 3 "" H 1250 1100 60  0000 C CNN
 	1    1250 1100
 	1    0    0    -1  
 $EndComp
-$Comp
-L CONN_01X28 P4
-U 1 1 56D96DFF
-P 1250 5550
-F 0 "P4" H 1250 7000 50  0000 C CNN
-F 1 "SOCKET" V 1350 5550 50  0000 C CNN
-F 2 "Housings_DIP:DIP-28_W15.24mm" H 1250 5550 60  0001 C CNN
-F 3 "" H 1250 5550 60  0000 C CNN
-	1    1250 5550
-	1    0    0    -1  
-$EndComp
-NoConn ~ 1050 4200
-NoConn ~ 1050 4300
-NoConn ~ 1050 4400
-NoConn ~ 1050 4500
-Text Label 1050 4600 2    60   ~ 0
+NoConn ~ 1000 4050
+NoConn ~ 1000 4150
+NoConn ~ 1000 4250
+NoConn ~ 1000 4350
+Text Label 1000 4450 2    60   ~ 0
 ~RES
-Text Label 1050 4700 2    60   ~ 0
+Text Label 1000 4550 2    60   ~ 0
 CLK
-Text Label 1050 4800 2    60   ~ 0
+Text Label 1000 4650 2    60   ~ 0
 RW
-Text Label 1050 4900 2    60   ~ 0
+Text Label 1000 4750 2    60   ~ 0
 ~CS
-Text Label 1050 5000 2    60   ~ 0
+Text Label 1000 4850 2    60   ~ 0
 A0
-Text Label 1050 5100 2    60   ~ 0
+Text Label 1000 4950 2    60   ~ 0
 A1
-Text Label 1050 5200 2    60   ~ 0
+Text Label 1000 5050 2    60   ~ 0
 A2
-Text Label 1050 5300 2    60   ~ 0
+Text Label 1000 5150 2    60   ~ 0
 A3
-Text Label 1050 5400 2    60   ~ 0
+Text Label 1000 5250 2    60   ~ 0
 A4
-Text Label 1050 5600 2    60   ~ 0
+Text Label 1000 5700 2    60   ~ 0
 D0
-Text Label 1050 5700 2    60   ~ 0
+Text Label 1000 5800 2    60   ~ 0
 D1
-Text Label 1050 5800 2    60   ~ 0
+Text Label 1000 5900 2    60   ~ 0
 D2
-Text Label 1050 5900 2    60   ~ 0
+Text Label 1000 6000 2    60   ~ 0
 D3
-Text Label 1050 6000 2    60   ~ 0
+Text Label 1000 6100 2    60   ~ 0
 D4
-Text Label 1050 6100 2    60   ~ 0
+Text Label 1000 6200 2    60   ~ 0
 D5
-Text Label 1050 6200 2    60   ~ 0
+Text Label 1000 6300 2    60   ~ 0
 D6
-Text Label 1050 6300 2    60   ~ 0
+Text Label 1000 6400 2    60   ~ 0
 D7
-Text Label 1050 6400 2    60   ~ 0
+Text Label 1000 6500 2    60   ~ 0
 POTY
-Text Label 1050 6500 2    60   ~ 0
+Text Label 1000 6600 2    60   ~ 0
 POTX
 $Comp
 L VCC #PWR08
 U 1 1 56D974B1
-P 800 6600
-F 0 "#PWR08" H 800 6450 50  0001 C CNN
-F 1 "VCC" H 800 6750 50  0000 C CNN
-F 2 "" H 800 6600 60  0000 C CNN
-F 3 "" H 800 6600 60  0000 C CNN
-	1    800  6600
+P 750 6700
+F 0 "#PWR08" H 750 6550 50  0001 C CNN
+F 1 "VCC" H 750 6850 50  0000 C CNN
+F 2 "" H 750 6700 60  0000 C CNN
+F 3 "" H 750 6700 60  0000 C CNN
+	1    750  6700
 	0    -1   -1   0   
 $EndComp
 $Comp
 L GND #PWR09
 U 1 1 56D9751E
-P 850 5500
-F 0 "#PWR09" H 850 5250 50  0001 C CNN
-F 1 "GND" H 850 5350 50  0000 C CNN
-F 2 "" H 850 5500 60  0000 C CNN
-F 3 "" H 850 5500 60  0000 C CNN
-	1    850  5500
+P 800 5350
+F 0 "#PWR09" H 800 5100 50  0001 C CNN
+F 1 "GND" H 800 5200 50  0000 C CNN
+F 2 "" H 800 5350 60  0000 C CNN
+F 3 "" H 800 5350 60  0000 C CNN
+	1    800  5350
 	0    1    1    0   
 $EndComp
-NoConn ~ 1050 6700
-NoConn ~ 1050 6800
+NoConn ~ 1000 6800
+NoConn ~ 1000 6900
 $Comp
 L VDD #PWR010
 U 1 1 56D9CAE7
-P 1050 6900
-F 0 "#PWR010" H 1050 6750 50  0001 C CNN
-F 1 "VDD" H 1050 7050 50  0000 C CNN
-F 2 "" H 1050 6900 60  0000 C CNN
-F 3 "" H 1050 6900 60  0000 C CNN
-	1    1050 6900
+P 1000 7000
+F 0 "#PWR010" H 1000 6850 50  0001 C CNN
+F 1 "VDD" H 1000 7150 50  0000 C CNN
+F 2 "" H 1000 7000 60  0000 C CNN
+F 3 "" H 1000 7000 60  0000 C CNN
+	1    1000 7000
 	0    -1   -1   0   
 $EndComp
 $Comp
@@ -879,9 +868,9 @@ Wire Wire Line
 	4150 7050 4150 7500
 Connection ~ 4150 7100
 Wire Wire Line
-	850  5500 1050 5500
+	800  5350 1000 5350
 Wire Wire Line
-	800  6600 1050 6600
+	750  6700 1000 6700
 Wire Wire Line
 	7050 1400 6500 1400
 Wire Wire Line
@@ -1527,4 +1516,26 @@ F 3 "" H 6850 4450 60  0000 C CNN
 	0    1    1    0   
 $EndComp
 Connection ~ 6550 4450
+$Comp
+L CONN_01X14 P4
+U 1 1 56E7E66F
+P 1200 4700
+F 0 "P4" H 1200 5450 50  0000 C CNN
+F 1 "SOCKET LEFT" V 1300 4700 50  0000 C CNN
+F 2 "Pin_Headers:Pin_Header_Straight_1x14" H 1200 4700 60  0001 C CNN
+F 3 "" H 1200 4700 60  0000 C CNN
+	1    1200 4700
+	1    0    0    -1  
+$EndComp
+$Comp
+L CONN_01X14 P6
+U 1 1 56E7EC84
+P 1200 6350
+F 0 "P6" H 1200 7100 50  0000 C CNN
+F 1 "SOCKET RIGHT" V 1300 6350 50  0000 C CNN
+F 2 "Pin_Headers:Pin_Header_Straight_1x14" H 1200 6350 60  0001 C CNN
+F 3 "" H 1200 6350 60  0000 C CNN
+	1    1200 6350
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC
