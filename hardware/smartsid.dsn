@@ -1,9 +1,9 @@
-(pcb C:\cygwin\home\hb\workspace\smartsid\hardware\smartsid.dsn
+(pcb /home/henning/workspace/smartsid/hardware/smartsid.dsn
   (parser
     (string_quote ")
     (space_in_quoted_tokens on)
     (host_cad "KiCad's Pcbnew")
-    (host_version "4.0.0-rc2-stable")
+    (host_version "4.0.1-stable")
   )
   (resolution um 10)
   (unit um)
@@ -28,9 +28,9 @@
     (via "Via[0-1]_600:400_um")
     (rule
       (width 250)
-      (clearance 200.1)
-      (clearance 200.1 (type default_smd))
-      (clearance 50 (type smd_smd))
+      (clearance 127.1)
+      (clearance 127.1 (type default_smd))
+      (clearance 31.75 (type smd_smd))
     )
   )
   (placement
@@ -57,7 +57,7 @@
       (place C21 173990 -110490 front 90 (PN 470p))
     )
     (component Pin_Headers:Pin_Header_Straight_1x05
-      (place P1 132080 -123190 front 90 (PN INPUT))
+      (place P1 130810 -123190 front 90 (PN INPUT))
     )
     (component Discret:R1
       (place R1 147320 -76200 front 270 (PN 220))
@@ -70,6 +70,8 @@
       (place R10 160020 -76200 front 90 (PN 220))
       (place R11 173990 -101600 front 90 (PN 10k))
       (place R12 176530 -109220 front 90 (PN 1k))
+      (place R13 152400 -76200 front 90 (PN 1k))
+      (place R14 154940 -76200 front 90 (PN 1k))
     )
     (component "Housings_DIP:DIP-20_W7.62mm"
       (place U1 134620 -88900 front 0 (PN GAL16V8))
@@ -79,8 +81,8 @@
       (place U5 148590 -81280 front 0 (PN SID1))
     )
     (component "Power_Integrations:TO-220"
-      (place U3 162560 -123190 front 180 (PN 7812))
-      (place U4 149860 -123190 front 180 (PN 7809))
+      (place U3 161290 -123190 front 180 (PN 7812))
+      (place U4 148590 -123190 front 180 (PN 7809))
     )
     (component "Housings_DIP:DIP-16_W7.62mm"
       (place U6 153670 -88900 front 0 (PN 4052))
@@ -99,7 +101,7 @@
       (place P5 170180 -123190 front 90 (PN OUTPUT))
       (place JP8 168910 -71120 front 0 (PN INPUT2))
       (place JP11 138430 -71120 front 0 (PN INPUT1))
-      (place P3 134620 -119380 front 90 (PN POT2))
+      (place P3 133350 -119380 front 90 (PN POT2))
     )
     (component Discret:R3
       (place R7 157480 -113030 front 0 (PN 4k7))
@@ -125,8 +127,8 @@
       (place RV2 164465 -71120 front 180 (PN 1M))
     )
     (component Pinheaders:Pin_Header_Straight_1x02
-      (place JP9 156210 -77470 front 180 (PN NR1))
-      (place JP10 151130 -77470 front 180 (PN NR2))
+      (place JP9 157480 -77470 front 180 (PN NR1))
+      (place JP10 149860 -77470 front 180 (PN NR2))
     )
   )
   (library
@@ -572,7 +574,7 @@
     )
     (net GND
       (pins C5-2 C6-2 C7-2 C8-2 C15-2 C18-1 R2-2 R3-2 R5-2 R6-2 U1-10 U2-14 U3-2 U4-2
-        U5-14 U6-6 U6-8 U8-3 P5-1 R9-2 C20-2 R12-2 P2-1 P2-3 P2-5 P2-7 P2-9 P2-11
+        U5-14 U6-6 U6-8 U8-3 P5-2 R9-2 C20-2 R12-2 P2-1 P2-3 P2-5 P2-7 P2-9 P2-11
         P3-3 P4-14 RV1-1 RV2-1 JP9-2 JP10-2)
     )
     (net /+9V
@@ -744,10 +746,10 @@
       (pins C14-2 JP11-1)
     )
     (net /S1OUT
-      (pins R6-1 U5-27 R11-2)
+      (pins R6-1 U5-27 R11-2 R14-1)
     )
     (net /S2OUT
-      (pins R3-1 R4-2 U2-27)
+      (pins R3-1 R4-2 U2-27 R13-1)
     )
     (net /LEFT
       (pins U6-1 U6-4 U6-12 U6-15 C22-1)
@@ -783,10 +785,10 @@
       (pins C18-2 U6-7 U8-5)
     )
     (net /RIGHT_OUT
-      (pins U6-3 P5-2)
+      (pins U6-3 P5-3)
     )
     (net /LEFT_OUT
-      (pins U6-13 P5-3)
+      (pins U6-13 P5-1)
     )
     (net "Net-(U8-Pad6)"
       (pins U8-6)
@@ -836,21 +838,21 @@
     (net "Net-(P6-Pad12)"
       (pins P6-12)
     )
-    (net "Net-(P6-Pad13)"
-      (pins P6-13)
+    (net /MONO_OUT
+      (pins P6-13 R13-2 R14-2)
     )
     (class kicad_default "" /A0 /A1 /A2 /A3 /A4 /A5 /A8 /CLK /D0 /D1 /D2 /D3
-      /D4 /D5 /D6 /D7 /IO1EN /IO2EN /LEFT /LEFT_OUT /M0 /M1 /MS /POT2X /POT2Y
-      /POTX /POTY /PS /RIGHT /RIGHT_OUT /RW /S1IN /S1OUT /S2IN /S2OUT /~CS
-      /~CS1 /~CS2 /~IO1 /~IO2 /~RES "Net-(C1-Pad1)" "Net-(C1-Pad2)" "Net-(C10-Pad1)"
-      "Net-(C10-Pad2)" "Net-(C11-Pad1)" "Net-(C11-Pad2)" "Net-(C12-Pad1)"
-      "Net-(C13-Pad1)" "Net-(C13-Pad2)" "Net-(C14-Pad1)" "Net-(C14-Pad2)"
-      "Net-(C15-Pad1)" "Net-(C16-Pad2)" "Net-(C17-Pad1)" "Net-(C17-Pad2)"
-      "Net-(C2-Pad1)" "Net-(C20-Pad1)" "Net-(C21-Pad2)" "Net-(C3-Pad1)" "Net-(C3-Pad2)"
-      "Net-(C4-Pad1)" "Net-(C9-Pad2)" "Net-(JP1-Pad2)" "Net-(JP11-Pad3)" "Net-(JP2-Pad2)"
-      "Net-(JP3-Pad2)" "Net-(JP5-Pad2)" "Net-(JP6-Pad2)" "Net-(JP7-Pad2)"
-      "Net-(JP8-Pad3)" "Net-(P4-Pad1)" "Net-(P4-Pad2)" "Net-(P4-Pad3)" "Net-(P4-Pad4)"
-      "Net-(P6-Pad12)" "Net-(P6-Pad13)" "Net-(R1-Pad2)" "Net-(R10-Pad2)" "Net-(RV1-Pad3)"
+      /D4 /D5 /D6 /D7 /IO1EN /IO2EN /LEFT /LEFT_OUT /M0 /M1 /MONO_OUT /MS
+      /POT2X /POT2Y /POTX /POTY /PS /RIGHT /RIGHT_OUT /RW /S1IN /S1OUT /S2IN
+      /S2OUT /~CS /~CS1 /~CS2 /~IO1 /~IO2 /~RES "Net-(C1-Pad1)" "Net-(C1-Pad2)"
+      "Net-(C10-Pad1)" "Net-(C10-Pad2)" "Net-(C11-Pad1)" "Net-(C11-Pad2)"
+      "Net-(C12-Pad1)" "Net-(C13-Pad1)" "Net-(C13-Pad2)" "Net-(C14-Pad1)"
+      "Net-(C14-Pad2)" "Net-(C15-Pad1)" "Net-(C16-Pad2)" "Net-(C17-Pad1)"
+      "Net-(C17-Pad2)" "Net-(C2-Pad1)" "Net-(C20-Pad1)" "Net-(C21-Pad2)" "Net-(C3-Pad1)"
+      "Net-(C3-Pad2)" "Net-(C4-Pad1)" "Net-(C9-Pad2)" "Net-(JP1-Pad2)" "Net-(JP11-Pad3)"
+      "Net-(JP2-Pad2)" "Net-(JP3-Pad2)" "Net-(JP5-Pad2)" "Net-(JP6-Pad2)"
+      "Net-(JP7-Pad2)" "Net-(JP8-Pad3)" "Net-(P4-Pad1)" "Net-(P4-Pad2)" "Net-(P4-Pad3)"
+      "Net-(P4-Pad4)" "Net-(P6-Pad12)" "Net-(R1-Pad2)" "Net-(R10-Pad2)" "Net-(RV1-Pad3)"
       "Net-(RV2-Pad3)" "Net-(U1-Pad11)" "Net-(U1-Pad12)" "Net-(U1-Pad14)"
       "Net-(U1-Pad18)" "Net-(U8-Pad6)" "Net-(U8-Pad7)"
       (circuit
@@ -858,7 +860,7 @@
       )
       (rule
         (width 250)
-        (clearance 200.1)
+        (clearance 127.1)
       )
     )
     (class Power /+12V /+16V /+9V /PWR /VEE GND VCC VDD
