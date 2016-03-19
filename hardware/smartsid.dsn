@@ -35,18 +35,18 @@
   )
   (placement
     (component Capacitors_ThroughHole:C_Disc_D3_P2.5
-      (place C1 142240 -82550 front 180 (PN 480p))
-      (place C2 139700 -85090 front 0 (PN 22n))
-      (place C3 137160 -85090 front 180 (PN 480p))
-      (place C4 134620 -82550 front 0 (PN 22n))
+      (place C1 142240 -83820 front 180 (PN 480p))
+      (place C2 139700 -86360 front 0 (PN 22n))
+      (place C3 137160 -86360 front 180 (PN 480p))
+      (place C4 134620 -83820 front 0 (PN 22n))
       (place C5 165100 -120650 front 180 (PN 330n))
       (place C6 157480 -120650 front 0 (PN 100n))
       (place C7 152400 -120650 front 180 (PN 330n))
       (place C8 144780 -120650 front 0 (PN 100n))
-      (place C9 158750 -82550 front 0 (PN 480p))
-      (place C10 153670 -85090 front 0 (PN 22n))
-      (place C11 153670 -82550 front 0 (PN 480p))
-      (place C12 161290 -85090 front 180 (PN 22n))
+      (place C9 158750 -83820 front 0 (PN 480p))
+      (place C10 153670 -86360 front 0 (PN 22n))
+      (place C11 153670 -83820 front 0 (PN 480p))
+      (place C12 161290 -86360 front 180 (PN 22n))
       (place C13 171450 -82550 front 90 (PN 100n))
       (place C14 173990 -80010 front 270 (PN 100n))
       (place C15 168910 -105410 front 0 (PN 1000p))
@@ -104,8 +104,8 @@
       (place P3 133350 -119380 front 90 (PN POT2))
     )
     (component Discret:R3
-      (place R7 157480 -113030 front 0 (PN 4k7))
-      (place R8 157480 -110490 front 0 (PN 4k7))
+      (place R7 157480 -111760 front 0 (PN 4k7))
+      (place R8 157480 -109220 front 0 (PN 4k7))
     )
     (component "TO_SOT_Packages_THT:TO-92_Inline_Narrow_Oval"
       (place Q1 168910 -114300 front 0 (PN Q_NPN_BCE))
@@ -123,7 +123,7 @@
       (place P6 151130 -114300 back 180 (PN "SOCKET RIGHT"))
     )
     (component "Potentiometers:Potentiometer_Bourns_3296W_3-8Zoll_Inline_ScrewUp"
-      (place RV1 142240 -71120 front 180 (PN 1M))
+      (place RV1 142875 -71120 front 180 (PN 1M))
       (place RV2 164465 -71120 front 180 (PN 1M))
     )
     (component Pinheaders:Pin_Header_Straight_1x02
