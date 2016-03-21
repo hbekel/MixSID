@@ -1,9 +1,9 @@
-(pcb /home/henning/workspace/smartsid/hardware/smartsid.dsn
+(pcb C:\cygwin\home\hb\workspace\smartsid\hardware\smartsid.dsn
   (parser
     (string_quote ")
     (space_in_quoted_tokens on)
     (host_cad "KiCad's Pcbnew")
-    (host_version "4.0.1-stable")
+    (host_version "4.0.0-rc2-stable")
   )
   (resolution um 10)
   (unit um)
@@ -49,11 +49,11 @@
       (place C12 161290 -86360 front 180 (PN 22n))
       (place C13 171450 -82550 front 90 (PN 100n))
       (place C14 173990 -80010 front 270 (PN 100n))
-      (place C15 168910 -105410 front 0 (PN 1000p))
+      (place C15 168910 -105410 front 0 (PN 1n))
       (place C16 168910 -110490 front 90 (PN 470p))
       (place C17 171450 -97790 front 180 (PN 10u))
       (place C18 173990 -97790 front 0 (PN 10u))
-      (place C20 173990 -105410 front 0 (PN 1000p))
+      (place C20 173990 -105410 front 0 (PN 1n))
       (place C21 173990 -110490 front 90 (PN 470p))
     )
     (component Pin_Headers:Pin_Header_Straight_1x05
@@ -99,8 +99,8 @@
       (place JP6 171450 -71120 front 0 (PN S1CAP2))
       (place JP7 173990 -71120 front 0 (PN S1CAP1))
       (place P5 170180 -123190 front 90 (PN OUTPUT))
-      (place JP8 168910 -71120 front 0 (PN INPUT2))
-      (place JP11 138430 -71120 front 0 (PN INPUT1))
+      (place JP8 138430 -71120 front 0 (PN INPUT2))
+      (place JP11 168910 -71120 front 0 (PN INPUT1))
       (place P3 133350 -119380 front 90 (PN POT2))
     )
     (component Discret:R3
@@ -108,8 +108,8 @@
       (place R8 157480 -109220 front 0 (PN 4k7))
     )
     (component "TO_SOT_Packages_THT:TO-92_Inline_Narrow_Oval"
-      (place Q1 168910 -114300 front 0 (PN Q_NPN_BCE))
-      (place Q2 173990 -114300 front 0 (PN Q_NPN_BCE))
+      (place Q1 168910 -114300 front 0 (PN BC547))
+      (place Q2 173990 -114300 front 0 (PN BC547))
     )
     (component Capacitors_ThroughHole:C_Radial_D5_L6_P2.5
       (place C19 168275 -118999 front 0 (PN 10u))
@@ -598,17 +598,11 @@
     (net "Net-(C12-Pad1)"
       (pins C12-1 JP7-3)
     )
-    (net "Net-(JP1-Pad2)"
-      (pins U2-28 JP1-2)
-    )
     (net "Net-(JP2-Pad2)"
       (pins U2-4 JP2-2)
     )
     (net "Net-(JP3-Pad2)"
       (pins U2-1 JP3-2)
-    )
-    (net "Net-(JP5-Pad2)"
-      (pins U5-28 JP5-2)
     )
     (net "Net-(JP6-Pad2)"
       (pins U5-4 JP6-2)
@@ -797,7 +791,7 @@
       (pins U8-7)
     )
     (net /+12V
-      (pins C7-1 U4-1 JP1-1 JP4-2 JP5-1 Q1-2 Q2-2)
+      (pins C7-1 U4-1 JP1-1 JP4-2 JP5-1 Q1-1 Q2-1)
     )
     (net /PWR
       (pins C6-1 U3-3 JP4-1)
@@ -827,10 +821,10 @@
       (pins RV2-3)
     )
     (net "Net-(C15-Pad1)"
-      (pins C15-1 C16-1 R4-1 Q1-1)
+      (pins C15-1 C16-1 R4-1 Q1-2)
     )
     (net "Net-(C20-Pad1)"
-      (pins C20-1 C21-1 Q2-1 R11-1)
+      (pins C20-1 C21-1 Q2-2 R11-1)
     )
     (net "Net-(C21-Pad2)"
       (pins C21-2 Q2-3 R12-1 C22-2)
@@ -840,6 +834,12 @@
     )
     (net /MONO_OUT
       (pins P6-13 R13-2 R14-2)
+    )
+    (net /PWR2
+      (pins U2-28 JP1-2)
+    )
+    (net /PWR1
+      (pins U5-28 JP5-2)
     )
     (class kicad_default "" /A0 /A1 /A2 /A3 /A4 /A5 /A8 /CLK /D0 /D1 /D2 /D3
       /D4 /D5 /D6 /D7 /IO1EN /IO2EN /LEFT /LEFT_OUT /M0 /M1 /MONO_OUT /MS
@@ -863,7 +863,7 @@
         (clearance 127.1)
       )
     )
-    (class Power /+12V /+16V /+9V /PWR /VEE GND VCC VDD
+    (class Power /+12V /+16V /+9V /PWR /PWR1 /PWR2 /VEE GND VCC VDD
       (circuit
         (use_via Via[0-1]_600:400_um)
       )
