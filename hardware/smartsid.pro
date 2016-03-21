@@ -1,4 +1,4 @@
-update=07.03.2016 12:08:13
+update=21.03.2016 14:14:49
 version=1
 last_client=kicad
 [pcbnew]
@@ -35,7 +35,7 @@ LibName3=transistors
 LibName4=conn
 LibName5=linear
 LibName6=74xx
-LibName7=cmos4000
+LibName7=lib/4052
 LibName8=adc-dac
 LibName9=memory
 LibName10=xilinx

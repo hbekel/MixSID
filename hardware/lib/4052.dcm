@@ -1,0 +1,8 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP 4052
+D Dual Analog Multiplexer 4 to 1 line
+K CMOS MUX MUX4
+$ENDCMP
+#
+#End Doc Library
