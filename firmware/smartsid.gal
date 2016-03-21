@@ -5,14 +5,13 @@ A5   A8   /IO1 /IO2 /CS  RW   MS   PS  IO1EN GND
 NC   CSI1 CSO1 CSI2 CSO2 /CS1 /CS2 NC  IO2EN  VCC
 
 CSO1 = MS * CS +
-      /MS * CS * /A5 +
-      /MS * CS * /A8
-
+      /MS * CS * /A5 * /A8
+      
 CSO2 = MS * CS * /RW +
       /MS * CS * A5 +
       /MS * CS * A8 +
-      /MS * CS * IO1EN * IO1 +
-      /MS * CS * IO2EN * IO2
+      /MS * IO1EN * IO1 +
+      /MS * IO2EN * IO2
 
 CS1 = PS * CSI1 +
       /PS * CSI2
