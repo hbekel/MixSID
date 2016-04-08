@@ -1283,17 +1283,6 @@ F 3 "" H 2750 4400 60  0000 C CNN
 	1    2750 4400
 	1    0    0    -1  
 $EndComp
-$Comp
-L C C19
-U 1 1 56E6C289
-P 3900 4400
-F 0 "C19" H 3925 4500 50  0000 L CNN
-F 1 "10u" H 3925 4300 50  0000 L CNN
-F 2 "Capacitors_ThroughHole:C_Radial_D5_L6_P2.5" H 3938 4250 30  0001 C CNN
-F 3 "" H 3900 4400 60  0000 C CNN
-	1    3900 4400
-	0    1    1    0   
-$EndComp
 Connection ~ 3600 4400
 $Comp
 L R R6
@@ -1395,17 +1384,6 @@ F 2 "" H 5700 4450 60  0000 C CNN
 F 3 "" H 5700 4450 60  0000 C CNN
 	1    5700 4450
 	1    0    0    -1  
-$EndComp
-$Comp
-L C C22
-U 1 1 56E6CA65
-P 6850 4450
-F 0 "C22" H 6875 4550 50  0000 L CNN
-F 1 "10u" H 6875 4350 50  0000 L CNN
-F 2 "Capacitors_ThroughHole:C_Radial_D5_L6_P2.5" H 6888 4300 30  0001 C CNN
-F 3 "" H 6850 4450 60  0000 C CNN
-	1    6850 4450
-	0    1    1    0   
 $EndComp
 Connection ~ 6550 4450
 $Comp
@@ -1593,4 +1571,30 @@ F 3 "" H 9350 5350 60  0000 C CNN
 	1    9350 5350
 	1    0    0    -1  
 $EndComp
+$Comp
+L CP_Small C19
+U 1 1 5707E4A7
+P 3850 4400
+F 0 "C19" H 3860 4470 50  0000 L CNN
+F 1 "10uF" H 3860 4320 50  0000 L CNN
+F 2 "Capacitors_ThroughHole:C_Radial_D5_L6_P2.5" H 3850 4400 60  0001 C CNN
+F 3 "" H 3850 4400 60  0000 C CNN
+	1    3850 4400
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	3950 4400 4050 4400
+$Comp
+L CP_Small C22
+U 1 1 5707EED3
+P 6800 4450
+F 0 "C22" H 6810 4520 50  0000 L CNN
+F 1 "10uF" H 6810 4370 50  0000 L CNN
+F 2 "Capacitors_ThroughHole:C_Radial_D5_L6_P2.5" H 6800 4450 60  0001 C CNN
+F 3 "" H 6800 4450 60  0000 C CNN
+	1    6800 4450
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	6900 4450 7000 4450
 $EndSCHEMATC
