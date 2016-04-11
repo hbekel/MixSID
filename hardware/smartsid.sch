@@ -648,9 +648,9 @@ F 3 "" H 1050 3100 60  0000 C CNN
 	1    1050 3100
 	0    1    1    0   
 $EndComp
-Text Label 4050 4400 0    60   ~ 0
-RIGHT
 Text Label 7000 4450 0    60   ~ 0
+RIGHT
+Text Label 4050 4400 0    60   ~ 0
 LEFT
 $Comp
 L GND #PWR012
@@ -917,13 +917,13 @@ Text Label 8650 4850 2    60   ~ 0
 RIGHT
 Text Label 8650 5250 2    60   ~ 0
 RIGHT
-Text Label 8650 4950 2    60   ~ 0
-LEFT
-Text Label 8650 5350 2    60   ~ 0
-RIGHT
 Text Label 8650 5050 2    60   ~ 0
-RIGHT
+LEFT
 Text Label 8650 5450 2    60   ~ 0
+RIGHT
+Text Label 8650 4950 2    60   ~ 0
+RIGHT
+Text Label 8650 5350 2    60   ~ 0
 LEFT
 Text Label 1050 3000 2    60   ~ 0
 LEFT_OUT
