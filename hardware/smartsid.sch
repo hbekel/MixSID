@@ -1565,7 +1565,7 @@ U 1 1 570C5ED8
 P 1200 1950
 F 0 "P2" H 1200 2250 50  0000 C CNN
 F 1 "CONTROL" H 1200 1650 50  0000 C CNN
-F 2 "Pin_Headers:Pin_Header_Straight_2x05" H 1200 750 60  0001 C CNN
+F 2 "Pinheaders:Pin_Header_Straight_2x05" H 1200 750 60  0001 C CNN
 F 3 "" H 1200 750 60  0000 C CNN
 	1    1200 1950
 	1    0    0    -1  

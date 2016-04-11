@@ -1,7 +1,7 @@
 (export (version D)
   (design
-    (source C:/cygwin/home/hb/workspace/smartsid/hardware/smartsid.sch)
-    (date "11.04.2016 13:29:32")
+    (source C:\cygwin\home\hb\workspace\smartsid\hardware\smartsid.sch)
+    (date "11.04.2016 15:18:51")
     (tool "Eeschema 4.0.0-rc2-stable")
     (sheet (number 1) (name /) (tstamps /)
       (title_block
@@ -383,7 +383,7 @@
       (tstamp 5707EED3))
     (comp (ref P2)
       (value CONTROL)
-      (footprint Pin_Headers:Pin_Header_Straight_2x05)
+      (footprint Pinheaders:Pin_Header_Straight_2x05)
       (libsource (lib conn) (part CONN_02X05))
       (sheetpath (names /) (tstamps /))
       (tstamp 570C5ED8))
