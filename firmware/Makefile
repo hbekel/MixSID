@@ -3,7 +3,7 @@ ASMFLAGS=-c -f -p
 
 PROJECT=smartsid
 
-all: $(PROJECT).jed
+all: $(PROJECT).jed $(PROJECT).chp
 
 %.jed: %.gal
 	$(ASM) $(ASMFLAGS) $<
@@ -12,4 +12,4 @@ all: $(PROJECT).jed
 	$(ASM) -f -p $<
 
 clean:
-	rm $(PROJECT).jed
+	rm -f $(PROJECT).{jed,chp}

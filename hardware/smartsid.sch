@@ -57,17 +57,6 @@ F 3 "" H 6050 2350 60  0000 C CNN
 	1    5850 2300
 	1    0    0    -1  
 $EndComp
-$Comp
-L SMARTSID U1
-U 1 1 56D81BBF
-P 9300 3450
-F 0 "U1" H 9300 4000 60  0000 C CNN
-F 1 "GAL16V8" H 9300 2900 60  0000 C CNN
-F 2 "Housings_DIP:DIP-20_W7.62mm" H 9350 3200 60  0001 C CNN
-F 3 "" H 9350 3200 60  0000 C CNN
-	1    9300 3450
-	1    0    0    -1  
-$EndComp
 Text Label 1050 900  2    60   ~ 0
 A5
 Text Label 1050 1000 2    60   ~ 0
@@ -76,13 +65,13 @@ Text Label 1050 1100 2    60   ~ 0
 ~IO1
 Text Label 1050 1200 2    60   ~ 0
 ~IO2
-Text Label 8800 3050 2    60   ~ 0
+Text Label 8800 3750 2    60   ~ 0
 A5
-Text Label 8800 3150 2    60   ~ 0
+Text Label 8800 3850 2    60   ~ 0
 A8
-Text Label 8800 3250 2    60   ~ 0
+Text Label 8800 3650 2    60   ~ 0
 ~IO1
-Text Label 8800 3350 2    60   ~ 0
+Text Label 8800 3550 2    60   ~ 0
 ~IO2
 $Comp
 L PWR_FLAG #FLG01
@@ -130,9 +119,9 @@ F 3 "" H 900 7550 60  0000 C CNN
 $EndComp
 Text Label 8800 3450 2    60   ~ 0
 ~CS
-Text Label 9800 3050 0    60   ~ 0
+Text Label 9800 3450 0    60   ~ 0
 ~CS1
-Text Label 9800 3150 0    60   ~ 0
+Text Label 9800 3550 0    60   ~ 0
 ~CS2
 Text Label 5250 1700 2    60   ~ 0
 ~CS1
@@ -206,20 +195,16 @@ Text Label 6500 2350 0    60   ~ 0
 POTX
 Text Label 6500 2450 0    60   ~ 0
 POTY
-Text Label 8800 3550 2    60   ~ 0
+Text Label 8800 3350 2    60   ~ 0
 RW
-Text Label 8800 3650 2    60   ~ 0
+Text Label 8800 3050 2    60   ~ 0
 MS
-Text Label 8800 3750 2    60   ~ 0
-PS
-Text Label 8800 3850 2    60   ~ 0
-IO1EN
+Text Label 8800 3150 2    60   ~ 0
+~IO1EN
 Text Label 1450 1750 0    60   ~ 0
 MS
-Text Label 1450 1850 0    60   ~ 0
-PS
-Text Label 1450 1950 0    60   ~ 0
-IO1EN
+Text Label 1450 2050 0    60   ~ 0
+~IO1EN
 $Comp
 L JUMPER3 JP2
 U 1 1 56D86A31
@@ -682,9 +667,9 @@ Text Label 10050 4750 0    60   ~ 0
 LEFT_OUT
 Text Label 10050 5150 0    60   ~ 0
 RIGHT_OUT
-Text Label 1450 2250 0    60   ~ 0
+Text Label 1450 1950 0    60   ~ 0
 M0
-Text Label 1450 2150 0    60   ~ 0
+Text Label 1450 1850 0    60   ~ 0
 M1
 Text Notes 3700 7600 2    60   ~ 0
 Only required on 250469
@@ -692,10 +677,6 @@ Text Notes 2200 7250 0    60   ~ 0
 from positive \nlead of C66\non 250469
 Text Label 1050 1300 2    60   ~ 0
 VEXT
-Wire Wire Line
-	9800 3250 9800 3350
-Wire Wire Line
-	9800 3450 9800 3550
 Wire Wire Line
 	4050 2400 4300 2400
 Wire Wire Line
@@ -822,10 +803,10 @@ Wire Wire Line
 	4650 7100 4650 6950
 Wire Wire Line
 	4650 6950 4750 6950
-Text Label 1450 2050 0    60   ~ 0
-IO2EN
-Text Label 9800 3650 0    60   ~ 0
-IO2EN
+Text Label 1450 2150 0    60   ~ 0
+~IO2EN
+Text Label 8800 3250 2    60   ~ 0
+~IO2EN
 $Comp
 L ICL7660 U8
 U 1 1 56DD82C5
@@ -1409,17 +1390,6 @@ F 3 "" H 1200 6350 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L CONN_02X06 P2
-U 1 1 56EAD3D7
-P 1200 2000
-F 0 "P2" H 1200 2350 50  0000 C CNN
-F 1 "CONTROL" H 1200 1650 50  0000 C CNN
-F 2 "Pinheaders:Pin_Header_Straight_2x06" H 1200 800 60  0001 C CNN
-F 3 "" H 1200 800 60  0000 C CNN
-	1    1200 2000
-	1    0    0    -1  
-$EndComp
-$Comp
 L GND #PWR031
 U 1 1 56EAEE9D
 P 950 2250
@@ -1588,5 +1558,27 @@ F 2 "" H 3500 2400 60  0000 C CNN
 F 3 "" H 3500 2400 60  0000 C CNN
 	1    3500 2400
 	0    -1   -1   0   
+$EndComp
+$Comp
+L CONN_02X05 P2
+U 1 1 570C5ED8
+P 1200 1950
+F 0 "P2" H 1200 2250 50  0000 C CNN
+F 1 "CONTROL" H 1200 1650 50  0000 C CNN
+F 2 "Pin_Headers:Pin_Header_Straight_2x05" H 1200 750 60  0001 C CNN
+F 3 "" H 1200 750 60  0000 C CNN
+	1    1200 1950
+	1    0    0    -1  
+$EndComp
+$Comp
+L SMARTSID U1
+U 1 1 56D81BBF
+P 9300 3450
+F 0 "U1" H 9300 4000 60  0000 C CNN
+F 1 "GAL16V8" H 9300 2900 60  0000 C CNN
+F 2 "Housings_DIP:DIP-20_W7.62mm" H 9350 3200 60  0001 C CNN
+F 3 "" H 9350 3200 60  0000 C CNN
+	1    9300 3450
+	1    0    0    -1  
 $EndComp
 $EndSCHEMATC

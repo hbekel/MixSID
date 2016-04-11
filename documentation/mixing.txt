@@ -1,14 +1,26 @@
-The smartsid board will feature on board op-amp based output circuits
-for both sids as well as an audio mixer that controls which signals
-finally end up at the stereo output pins.
+The smartsid board will feature on-board output circuits for both sids
+as well as an audio mixer that controls which signals finally end up
+at the stereo output pins.
 
 Two control signals (M0 and M1) will be provided that control the
 different mixing options:
 
  M0 | M1 | Left | Right
 ----|----|------|------|
- 0  | 0  | SID1 | SID1 | (first SID mono)
- 0  | 1  | SID2 | SID2 | (second SID mono)
- 1  | 0  | SID1 | SID2 | (first SID left, second SID right)
- 1  | 1  | SID2 | SID1 | (first SID right, second SID left)
+ 0  | 0  | SID2 | SID2 | (left SID on both channels)
+ 0  | 1  | SID1 | SID1 | (right SID on both channels)
+ 1  | 0  | SID1 | SID2 | (right SID left, left SID right)
+ 1  | 1  | SID2 | SID1 | (left SID left, right SID right)
 
+The last setting is the default setting if the M0 and M1 lines are not
+actively driven.
+
+At build time the user may also choose which SID is to be routed to
+the existing output circuit on the C64 board and will thus end up at
+the monitor or TV mono output. Either one of the two sids may be used
+exclusively, or both signals may be mixed down to mono using
+appropriate resitors. Note that mixing both outputs here will cause
+some crosstalk between the SIDs, i.e. the sound of one SID will always
+be slightly audible in the output of the other, and vice versa. Thus
+if you need to have the pure sound of each SID you should not mix them
+down to mono in this way.

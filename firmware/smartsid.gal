@@ -1,45 +1,33 @@
 GAL16V8
 SMRTSID
 
-A5   A8   /IO1 /IO2 /CS  RW   MS   PS  IO1EN GND
-NC   CSI1 CSO1 CSI2 CSO2 /CS1 /CS2 NC  IO2EN  VCC
+MS /IO1EN /IO2EN RW   /CS  /IO2 /IO1 A5 A8 GND
+NC NC     NC     /CS2 /CS1 NC   NC   NC NC VCC
 
-CSO1 = MS * CS +
+CS1 = MS * CS +
       /MS * CS * /A5 * /A8
       
-CSO2 = MS * CS * /RW +
+CS2 = MS * CS * /RW +
       /MS * CS * A5 +
       /MS * CS * A8 +
       /MS * IO1EN * IO1 +
       /MS * IO2EN * IO2
 
-CS1 = PS * CSI1 +
-      /PS * CSI2
-
-CS2 = PS * CSI2 +
-      /PS * CSI1
-
 DESCRIPTION:
 
 A5, A8, IO1, IO2, RW, CS = C64 input signals
-MS, PS, IO1EN, IO2EN     = control signals
-CS1, CS2                 = chip select outputs SID1, SID2
-
-CSO1, CSO2 -> connect externally to CSI1, CSI2
+MS, IO1EN, IO2EN     = control signals
+CS1, CS2             = chip select outputs SID1, SID2
 
 MS = MODE SELECT:
 
    HIGH = PARALLEL, BOTH SIDS AT D400-D800
    LOW  = STEREO, SID1 AT $D400, SID2 AT D420, D500, DE00*, DF00*
-   * (only if IO1 resp. IO2 are connected and IE=low)
+   * (only if IOn is connected and IOnEN=low)
    
-PS = PRIORITY SELECT, select SID at stereo locations in STEREO mode
-
-   HIGH = NORMAL  (SID2 addressed at stereo locations)
-   LOW  = SWAPPED (SID1 addressed at stereo locations)
-
 IO1EN, IO2EN = IO ENABLE lines
 
-   HIGH: Second SID also at the corresponding address
-   LOW:  Prevent SID2 at the corresponding address
+   HIGH: Prevent SID2 at the corresponding address
+   LOW:  Second SID also at the corresponding address
+
       
