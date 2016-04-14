@@ -16,8 +16,8 @@ CS2 = MS * CS * /RW +
 DESCRIPTION:
 
 A5, A8, IO1, IO2, RW, CS = C64 input signals
-MS, IO1EN, IO2EN     = control signals
-CS1, CS2             = chip select outputs SID1, SID2
+MS, IO1EN, IO2EN         = control signals
+CS1, CS2                 = chip select outputs SID1, SID2
 
 MS = MODE SELECT:
 

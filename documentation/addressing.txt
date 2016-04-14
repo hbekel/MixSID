@@ -1,4 +1,4 @@
-Stereo addressing scheme for the MixSID dual SID solution for the C64
+Stereo addressing scheme of the MixSID dual SID solution for the C64 
 ====================================================================
 
 There are three address control lines in this scheme, although only
@@ -27,7 +27,7 @@ sid will always be write-only when it appears in parallel with
 SID1. This way read accesses (for paddles and music effects) will only
 ever read from SID1, while SID2 completely ignores read accesses).
 
-Orthogonal Addressing Mode
+Orthogonal (Stereo) Addressing Mode
 ==========================
 
 If MODE SELECT is LOW, SID1 and SID2 will be addressed as shown in the
@@ -121,8 +121,8 @@ bridges as well.
 
 Using digital control signals also means that switching between modes
 may happen at runtime because the CS signals of both sids are
-guaranteed to be driven correctly at all times. (If naively using
-jumpers or a rotary switch, the CS lines of the SIDs are likely to
-float during switching and the SIDs will feel compelled to put data on
-the bus at random, causing the C64 to crash).
+guaranteed to be driven to proper logic levels at all times. (If
+naively using jumpers or a rotary switch, the CS lines of the SIDs are
+likely to float during switching and the SIDs will feel compelled to
+put data on the bus at random, causing the C64 to crash).
 
