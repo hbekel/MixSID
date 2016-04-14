@@ -1,4 +1,4 @@
-The smartsid board will feature on-board output circuits for both sids
+The MixSID board features on-board output circuits for both sids
 as well as an audio mixer that controls which signals finally end up
 at the stereo output pins.
 

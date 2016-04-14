@@ -28,20 +28,20 @@ LIBS:atmel
 LIBS:contrib
 LIBS:valves
 LIBS:mos6581
-LIBS:smartsid
+LIBS:mixsid
 LIBS:lm78xx
 LIBS:7660
-LIBS:smartsid-cache
+LIBS:mixsid-cache
 EELAYER 25 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
-Title "SmartSID - C64 stereo SID addon board"
+Title "MixSID - C64 stereo SID addon board"
 Date "2016-03-09"
 Rev "1"
 Comp "Henning Bekel"
-Comment1 "www.henning-bekel.de/smartsid"
+Comment1 ""
 Comment2 ""
 Comment3 ""
 Comment4 ""
@@ -1571,7 +1571,7 @@ F 3 "" H 1200 750 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L SMARTSID U1
+L MIXSID U1
 U 1 1 56D81BBF
 P 9300 3450
 F 0 "U1" H 9300 4000 60  0000 C CNN

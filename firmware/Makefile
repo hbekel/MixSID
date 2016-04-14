@@ -1,7 +1,7 @@
 ASM=galasm
 ASMFLAGS=-c -f -p
 
-PROJECT=smartsid
+PROJECT=mixsid
 
 all: $(PROJECT).jed $(PROJECT).chp
 

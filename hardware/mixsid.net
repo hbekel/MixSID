@@ -1,16 +1,16 @@
 (export (version D)
   (design
-    (source C:\cygwin\home\hb\workspace\smartsid\hardware\smartsid.sch)
+    (source C:\cygwin\home\hb\workspace\mixsid\hardware\mixsid.sch)
     (date "11.04.2016 15:18:51")
     (tool "Eeschema 4.0.0-rc2-stable")
     (sheet (number 1) (name /) (tstamps /)
       (title_block
-        (title "SmartSID - C64 stereo SID addon board")
+        (title "MixSID - C64 stereo SID addon board")
         (company "Henning Bekel")
         (rev 1)
         (date 2016-03-09)
-        (source smartsid.sch)
-        (comment (number 1) (value www.henning-bekel.de/smartsid))
+        (source mixsid.sch)
+        (comment (number 1) (value ""))
         (comment (number 2) (value ""))
         (comment (number 3) (value ""))
         (comment (number 4) (value "")))))
@@ -390,7 +390,7 @@
     (comp (ref U1)
       (value GAL16V8)
       (footprint Housings_DIP:DIP-20_W7.62mm)
-      (libsource (lib smartsid) (part SMARTSID))
+      (libsource (lib mixsid) (part MIXSID))
       (sheetpath (names /) (tstamps /))
       (tstamp 56D81BBF)))
   (libparts
@@ -660,10 +660,10 @@
       (pins
         (pin (num 1) (name ~) (type passive))
         (pin (num 2) (name ~) (type passive))))
-    (libpart (lib smartsid) (part SMARTSID)
+    (libpart (lib mixsid) (part MIXSID)
       (fields
         (field (name Reference) U)
-        (field (name Value) SMARTSID))
+        (field (name Value) MIXSID))
       (pins
         (pin (num 1) (name MS) (type input))
         (pin (num 2) (name ~IO1EN) (type input))
@@ -694,8 +694,8 @@
       (uri lib\4052.lib))
     (library (logical mos6581)
       (uri lib\mos6581.lib))
-    (library (logical smartsid)
-      (uri lib\smartsid.lib))
+    (library (logical mixsid)
+      (uri lib\mixsid.lib))
     (library (logical lm78xx)
       (uri lib\lm78xx.lib))
     (library (logical 7660)

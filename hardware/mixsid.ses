@@ -1,6 +1,6 @@
 
-(session smartsid.ses
-  (base_design smartsid.dsn)
+(session mixsid.ses
+  (base_design mixsid.dsn)
   (placement
     (resolution um 10)
     (component Capacitors_ThroughHole:C_Disc_D3_P2.5

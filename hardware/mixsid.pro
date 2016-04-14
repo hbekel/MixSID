@@ -58,6 +58,6 @@ LibName26=atmel
 LibName27=contrib
 LibName28=valves
 LibName29=lib/mos6581
-LibName30=lib/smartsid
+LibName30=lib/mixsid
 LibName31=lib/lm78xx
 LibName32=lib/7660

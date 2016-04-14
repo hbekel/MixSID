@@ -1,4 +1,4 @@
-Proposal for an addressing scheme in a dual sid solution for the C64
+Stereo addressing scheme for the MixSID dual SID solution for the C64
 ====================================================================
 
 There are three address control lines in this scheme, although only
@@ -115,7 +115,9 @@ high implies parallell adressing, stereo mixing and disabling of
 $de00/$df00.
 
 This allows the user to use a simple SPST switch to ground if he
-wishes to control one of these lines.
+wishes to control one of these lines. On the PCB, a GND pin is
+provided next to each control signal pin to allow the use of jumper
+bridges as well.
 
 Using digital control signals also means that switching between modes
 may happen at runtime because the CS signals of both sids are
