@@ -1,4 +1,4 @@
-update=21.03.2016 14:14:49
+update=28.04.2016 14:41:47
 version=1
 last_client=kicad
 [pcbnew]
@@ -61,3 +61,4 @@ LibName29=lib/mos6581
 LibName30=lib/mixsid
 LibName31=lib/lm78xx
 LibName32=lib/7660
+LibName33=lib/4053
