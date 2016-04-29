@@ -1665,7 +1665,7 @@ U 1 1 57226DFE
 P 4100 4300
 F 0 "RV3" H 4100 4200 50  0000 C CNN
 F 1 "10k" H 4100 4300 50  0000 C CNN
-F 2 "Potentiometers:Potentiometer_Bourns_3296W_3-8Zoll_Inline_ScrewUp" H 4100 4300 60  0001 C CNN
+F 2 "Potentiometers:Potentiometer_Bourns_3339P_Angular_ScrewUp" H 4100 4300 60  0001 C CNN
 F 3 "" H 4100 4300 60  0000 C CNN
 	1    4100 4300
 	0    1    1    0   
@@ -1676,7 +1676,7 @@ U 1 1 57227182
 P 7050 4350
 F 0 "RV4" H 7050 4250 50  0000 C CNN
 F 1 "10k" H 7050 4350 50  0000 C CNN
-F 2 "Potentiometers:Potentiometer_Bourns_3296W_3-8Zoll_Inline_ScrewUp" H 7050 4350 60  0001 C CNN
+F 2 "Potentiometers:Potentiometer_Bourns_3339P_Angular_ScrewUp" H 7050 4350 60  0001 C CNN
 F 3 "" H 7050 4350 60  0000 C CNN
 	1    7050 4350
 	0    1    1    0   
