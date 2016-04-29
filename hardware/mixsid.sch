@@ -202,9 +202,9 @@ Text Label 6950 5450 2    60   ~ 0
 MS
 Text Label 6950 5550 2    60   ~ 0
 ~IO1EN
-Text Label 1450 1750 0    60   ~ 0
+Text Label 1450 1850 0    60   ~ 0
 MS
-Text Label 1450 2150 0    60   ~ 0
+Text Label 1450 1950 0    60   ~ 0
 ~IO1EN
 $Comp
 L JUMPER3 JP2
@@ -668,9 +668,9 @@ Text Label 10650 5050 0    60   ~ 0
 LEFT_OUT
 Text Label 10650 5450 0    60   ~ 0
 RIGHT_OUT
-Text Label 1450 2050 0    60   ~ 0
+Text Label 1450 2350 0    60   ~ 0
 M0
-Text Label 1450 1950 0    60   ~ 0
+Text Label 1450 2250 0    60   ~ 0
 M1
 Text Notes 3250 7600 2    60   ~ 0
 Only required on 250469
@@ -804,7 +804,7 @@ Wire Wire Line
 	4200 7100 4200 6950
 Wire Wire Line
 	4200 6950 4300 6950
-Text Label 1450 2250 0    60   ~ 0
+Text Label 1450 2050 0    60   ~ 0
 ~IO2EN
 Text Label 6950 5650 2    60   ~ 0
 ~IO2EN
@@ -1571,26 +1571,14 @@ F 3 "" H 7050 4600 60  0000 C CNN
 	1    7050 4600
 	1    0    0    -1  
 $EndComp
-NoConn ~ 7950 5550
 Text Label 7950 6250 0    60   ~ 0
 PS
 Wire Wire Line
 	7950 6150 7950 6050
 Wire Wire Line
 	7950 5950 7950 5850
-$Comp
-L CONN_02X06 P2
-U 1 1 57221CBF
-P 1200 2000
-F 0 "P2" H 1200 2350 50  0000 C CNN
-F 1 "CONTROL" H 1200 1650 50  0000 C CNN
-F 2 "Pinheaders:Pin_Header_Straight_2x06" H 1200 800 60  0001 C CNN
-F 3 "" H 1200 800 60  0000 C CNN
-	1    1200 2000
-	1    0    0    -1  
-$EndComp
 Connection ~ 950  2250
-Text Label 1450 1850 0    60   ~ 0
+Text Label 1450 1750 0    60   ~ 0
 PS
 $Comp
 L 4053 U7
@@ -1780,4 +1768,19 @@ F 3 "" H 10300 1000 60  0000 C CNN
 	1    10300 1000
 	1    0    0    -1  
 $EndComp
+Text Label 7950 5550 0    60   ~ 0
+~RW2
+$Comp
+L CONN_02X07 P2
+U 1 1 57235049
+P 1200 2050
+F 0 "P2" H 1200 2450 50  0000 C CNN
+F 1 "CONTROL" V 1200 2050 50  0000 C CNN
+F 2 "Pin_Headers:Pin_Header_Straight_2x07" H 1200 850 60  0001 C CNN
+F 3 "" H 1200 850 60  0000 C CNN
+	1    1200 2050
+	1    0    0    -1  
+$EndComp
+Text Label 1450 2150 0    60   ~ 0
+~RW2
 $EndSCHEMATC
