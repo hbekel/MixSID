@@ -1030,7 +1030,7 @@ U 1 1 56E2B1AB
 P 5100 5750
 F 0 "RV1" H 5100 5650 50  0000 C CNN
 F 1 "1M" H 5100 5750 50  0000 C CNN
-F 2 "Potentiometers:Potentiometer_Bourns_3296W_3-8Zoll_Inline_ScrewUp" H 5100 5750 60  0001 C CNN
+F 2 "Potentiometers:Potentiometer_Bourns_3339P_Angular_ScrewUp" H 5100 5750 60  0001 C CNN
 F 3 "" H 5100 5750 60  0000 C CNN
 	1    5100 5750
 	1    0    0    -1  
@@ -1141,7 +1141,7 @@ U 1 1 56E2E530
 P 2150 5750
 F 0 "RV2" H 2150 5650 50  0000 C CNN
 F 1 "1M" H 2150 5750 50  0000 C CNN
-F 2 "Potentiometers:Potentiometer_Bourns_3296W_3-8Zoll_Inline_ScrewUp" H 2150 5750 60  0001 C CNN
+F 2 "Potentiometers:Potentiometer_Bourns_3339P_Angular_ScrewUp" H 2150 5750 60  0001 C CNN
 F 3 "" H 2150 5750 60  0000 C CNN
 	1    2150 5750
 	1    0    0    -1  
