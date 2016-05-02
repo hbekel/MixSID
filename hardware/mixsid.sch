@@ -1776,7 +1776,7 @@ U 1 1 57235049
 P 1200 2050
 F 0 "P2" H 1200 2450 50  0000 C CNN
 F 1 "CONTROL" V 1200 2050 50  0000 C CNN
-F 2 "Pin_Headers:Pin_Header_Straight_2x07" H 1200 850 60  0001 C CNN
+F 2 "Pinheaders:Pin_Header_Straight_2x07" H 1200 850 60  0001 C CNN
 F 3 "" H 1200 850 60  0000 C CNN
 	1    1200 2050
 	1    0    0    -1  
