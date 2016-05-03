@@ -1,15 +1,20 @@
 Stereo addressing scheme of the MixSID dual SID solution for the C64 
 ====================================================================
 
-There are three address control lines in this scheme, although only
+There are four address control lines in this scheme, although only
 one line is strictly required for basic operation of SID2 at the most
 commonly used addresses for stereo sid tunes.
 
-The MODE SELECT (MS) line controls the addressing mode, while the IO
-ENABLE (IO1EN/IO2EN) lines control whether or not the second SID
-appears at $DE00 or $DF00 when in orthogonal (stereo) addressing mode
+The MODE SELECT (MS) line controls the addressing mode, the PRIORITY
+SELECT line (PS) controls which SID is kept at address $d400 and which
+SID is in turn adressed at a stereo address in stereo mode, and
+finally the IO ENABLE (IO1EN/IO2EN) lines control whether or not the
+second SID appears at $DE00 or $DF00 when in stereo addressing mode
 (given that the corresponding signals IO1 and IO2 are connected at
 all).
+
+In addition, the RW2 line controls whether the second SID is
+write-only or read-write when in parallel addressing mode.
 
 MODE SELECT
 ===========
@@ -25,7 +30,8 @@ each 32 bytes in $D400-D800 (as usual).
 In addition, SID2 will *only* be selected if RW is low, so the second
 sid will always be write-only when it appears in parallel with
 SID1. This way read accesses (for paddles and music effects) will only
-ever read from SID1, while SID2 completely ignores read accesses).
+ever read from SID1, while SID2 completely ignores read accesses. This
+can be optionally disabled using the RW2 line.
 
 Orthogonal (Stereo) Addressing Mode
 ==========================
@@ -39,9 +45,9 @@ the second sid regardless of whether it expects it at d420, d500, de00
 or df00). Most importantly, the first SID is guaranteed *not* to appear
 at any of the addresses that SID2 appears at.
 
-In addition, SID2 will become fully read-write again when addressed
-orthogonal to SID1, as opposed to parallel addressing where it is
-forced write-only.
+In addition, SID2 will always become fully read-write again when
+addressed orthogonal to SID1, as opposed to parallel addressing where
+it is usually forced write-only.
 
 -----------------------
 |ADDR  | SID1 | SID2  |
@@ -107,7 +113,7 @@ jumpers or (rotary) switches), or controlled with additional custom
 hardware which multiplexes the lines accordingly (e.g. virtualizing
 the jumper settings).
 
-Instead, all three lines are digital control lines. If they are not
+Instead, all lines are digital control lines. If they are not
 connected, they are driven high by the internal pullups of the
 16V8. The logic has been designed to use the most common setting as
 the default when the signal is high. Leaving all three control lines
