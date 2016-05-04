@@ -202,7 +202,7 @@ Text Label 6950 5450 2    60   ~ 0
 MS
 Text Label 6950 5550 2    60   ~ 0
 ~IO1EN
-Text Label 1450 1850 0    60   ~ 0
+Text Label 1450 1750 0    60   ~ 0
 MS
 Text Label 1450 1950 0    60   ~ 0
 ~IO1EN
@@ -1578,7 +1578,7 @@ Wire Wire Line
 Wire Wire Line
 	7950 5950 7950 5850
 Connection ~ 950  2250
-Text Label 1450 1750 0    60   ~ 0
+Text Label 1450 1850 0    60   ~ 0
 PS
 $Comp
 L 4053 U7
@@ -1776,7 +1776,7 @@ U 1 1 57235049
 P 1200 2050
 F 0 "P2" H 1200 2450 50  0000 C CNN
 F 1 "CONTROL" V 1200 2050 50  0000 C CNN
-F 2 "Pin_Headers:Pin_Header_Straight_2x07" H 1200 850 60  0001 C CNN
+F 2 "Pinheaders:Pin_Header_Straight_2x07" H 1200 850 60  0001 C CNN
 F 3 "" H 1200 850 60  0000 C CNN
 	1    1200 2050
 	1    0    0    -1  
