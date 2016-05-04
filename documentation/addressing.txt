@@ -89,6 +89,16 @@ it is usually forced write-only.
 | $DF00 |      |  X   | optional (connect /IO2, use IO2EN=low to enable)
 -----------------------
 
+PRIORITY SELECT
+===============
+
+This line control which SID appears at the stereo addresses in
+orthogonal addressing mode.
+
+When the line is HIGH, the SID in the socket labeled SID1 appears at
+$d400 while the SID in socket SID2 appears at the common stereo addresses.
+When the line is low the SIDs are swapped in terms of addressing.
+
 IO ENABLE
 =========
 
@@ -103,6 +113,14 @@ required temporarily, the user may permanently connect IO1 and IO2 and
 simply control their application via the IO ENABLE signals. If these
 addresses are not needed at all, the user can opt to simply not
 connect the IO ENABLE and IO1/IO2 lines.
+
+Paddle Support
+==============
+
+Paddles simply work regardless of the current MODE and PRIORITY
+settings, as long as the RW2 line is HIGH so that the secondary SID is
+forced write-only. The paddle lines are always routed to the SID
+currently addressed at $d400.
 
 Rationale
 =========
