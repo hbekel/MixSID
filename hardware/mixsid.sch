@@ -1656,7 +1656,7 @@ F 1 "10k" H 4100 4300 50  0000 C CNN
 F 2 "Potentiometers:Potentiometer_Bourns_3339P_Angular_ScrewUp" H 4100 4300 60  0001 C CNN
 F 3 "" H 4100 4300 60  0000 C CNN
 	1    4100 4300
-	0    1    1    0   
+	0    1    -1   0   
 $EndComp
 $Comp
 L POT RV4
@@ -1667,7 +1667,7 @@ F 1 "10k" H 7050 4350 50  0000 C CNN
 F 2 "Potentiometers:Potentiometer_Bourns_3339P_Angular_ScrewUp" H 7050 4350 60  0001 C CNN
 F 3 "" H 7050 4350 60  0000 C CNN
 	1    7050 4350
-	0    1    1    0   
+	0    1    -1   0   
 $EndComp
 $Comp
 L C_Small C25
