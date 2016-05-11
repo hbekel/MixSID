@@ -1783,4 +1783,19 @@ F 3 "" H 1200 850 60  0000 C CNN
 $EndComp
 Text Label 1450 2150 0    60   ~ 0
 ~RW2
+$Comp
+L CONN_01X02 P3
+U 1 1 5732EF33
+P 1200 3600
+F 0 "P3" H 1200 3750 50  0000 C CNN
+F 1 "RAW" V 1300 3600 50  0000 C CNN
+F 2 "Pinheaders:Pin_Header_Straight_1x02" H 1200 3600 60  0001 C CNN
+F 3 "" H 1200 3600 60  0000 C CNN
+	1    1200 3600
+	1    0    0    -1  
+$EndComp
+Text Label 1000 3550 2    60   ~ 0
+S2OUT
+Text Label 1000 3650 2    60   ~ 0
+S1OUT
 $EndSCHEMATC
