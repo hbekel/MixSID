@@ -1,13 +1,13 @@
-(module R1 (layer F.Cu) (tedit 57332965)
+(module R1 (layer F.Cu) (tedit 573C1D3B)
   (descr "Resistance verticale")
   (tags R)
-  (fp_text reference R13 (at -3.81 48.26 90) (layer F.SilkS) hide
+  (fp_text reference REF** (at 0 0) (layer F.SilkS) hide
     (effects (font (size 1 1) (thickness 0.15)))
   )
-  (fp_text value 1k (at -5.08 48.26 90) (layer F.Fab)
+  (fp_text value VAL** (at 0 0) (layer F.Fab)
     (effects (font (size 1 1) (thickness 0.15)))
   )
-  (fp_circle (center -1.27 0) (end -1.143 -1.143) (layer F.SilkS) (width 0.15))
+  (fp_circle (center -1.25 0) (end -1 1.25) (layer F.SilkS) (width 0.15))
   (fp_line (start -1.27 0) (end 1.27 0) (layer F.SilkS) (width 0.15))
   (pad 1 thru_hole circle (at -1.27 0) (size 1.397 1.397) (drill 0.8128) (layers *.Cu *.Mask F.SilkS))
   (pad 2 thru_hole circle (at 1.27 0) (size 1.397 1.397) (drill 0.8128) (layers *.Cu *.Mask F.SilkS))

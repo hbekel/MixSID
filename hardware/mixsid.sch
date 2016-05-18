@@ -595,7 +595,7 @@ F 1 "100k" H 5680 4860 50  0000 L CNN
 F 2 "Discret:R1" H 5650 4900 60  0001 C CNN
 F 3 "" H 5650 4900 60  0000 C CNN
 	1    5650 4900
-	1    0    0    -1  
+	1    0    0    1   
 $EndComp
 $Comp
 L GND #PWR010
@@ -1071,7 +1071,7 @@ F 1 "100k" H 2730 4860 50  0000 L CNN
 F 2 "Discret:R1" H 2700 4900 60  0001 C CNN
 F 3 "" H 2700 4900 60  0000 C CNN
 	1    2700 4900
-	1    0    0    -1  
+	1    0    0    1   
 $EndComp
 $Comp
 L GND #PWR022
@@ -1777,10 +1777,6 @@ F 3 "" H 1200 850 60  0000 C CNN
 $EndComp
 Text Label 1450 2150 0    60   ~ 0
 ~RW2
-Text Label 3650 3550 0    60   ~ 0
-PWR2
-Text Label 6600 3600 0    60   ~ 0
-PWR1
 $Comp
 L JUMPER3 JP12
 U 1 1 573AF883
@@ -1824,4 +1820,8 @@ Text Label 950  3550 2    60   ~ 0
 S2OUT
 Text Label 950  3650 2    60   ~ 0
 S1OUT
+Text Label 3650 3550 0    60   ~ 0
++12V
+Text Label 6600 3600 0    60   ~ 0
++12V
 $EndSCHEMATC
