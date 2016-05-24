@@ -39,8 +39,8 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
 Title "MixSID - C64 stereo SID addon board"
-Date "2016-03-09"
-Rev "3"
+Date "2016-05-24"
+Rev "4"
 Comp "Henning Bekel"
 Comment1 ""
 Comment2 ""
