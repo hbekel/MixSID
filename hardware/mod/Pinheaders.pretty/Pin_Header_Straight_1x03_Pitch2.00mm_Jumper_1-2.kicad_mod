@@ -25,4 +25,9 @@
     (scale (xyz 0.78 0.78 0.78))
     (rotate (xyz 0 0 90))
   )
+  (model ${KIPRJMOD}/packages3d/Jumper.wrl
+    (at (xyz 0 -0.0375 0))    
+    (scale (xyz 0.32 0.32 0.32))
+    (rotate (xyz 0 0 0))
+  )
 )
