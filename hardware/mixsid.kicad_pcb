@@ -1530,7 +1530,7 @@
       (net 8 /+9V))
     (pad 1 thru_hole oval (at -2.54 0 180) (size 2.032 2.54) (drill 1.143) (layers *.Cu *.Mask F.SilkS)
       (net 70 /+12V))
-    (model Transistors_TO-220.3dshapes/TO-220_Bipolar-BCE_Horizontal_Reverse.wrl
+    (model ${KIPRJMOD}/packages3d/TO-220_Bipolar-BCE_Horizontal_Reverse.wrl
       (at (xyz 0 0 0))
       (scale (xyz 0.381 0.381 0.381))
       (rotate (xyz 0 180 0))
@@ -1564,7 +1564,7 @@
       (net 71 /PWR))
     (pad 1 thru_hole oval (at -2.54 0 180) (size 2.032 2.54) (drill 1.143) (layers *.Cu *.Mask F.SilkS)
       (net 87 /VEXT))
-    (model Transistors_TO-220.3dshapes/TO-220_Bipolar-BCE_Horizontal_Reverse.wrl
+    (model ${KIPRJMOD}/packages3d/TO-220_Bipolar-BCE_Horizontal_Reverse.wrl
       (at (xyz 0 0 0))
       (scale (xyz 0.381 0.381 0.381))
       (rotate (xyz 0 180 0))
