@@ -39,8 +39,8 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
 Title "MixSID - C64 stereo SID addon board"
-Date "2016-05-24"
-Rev "4"
+Date "2016-06-02"
+Rev "5"
 Comp "Henning Bekel"
 Comment1 ""
 Comment2 ""
@@ -668,9 +668,9 @@ Text Label 10650 5050 0    60   ~ 0
 LEFT_OUT
 Text Label 10650 5450 0    60   ~ 0
 RIGHT_OUT
-Text Label 1450 2350 0    60   ~ 0
-M0
 Text Label 1450 2250 0    60   ~ 0
+M0
+Text Label 1450 2150 0    60   ~ 0
 M1
 Text Notes 1750 7250 0    60   ~ 0
 from positive \nlead of C66\non 250469
@@ -1564,21 +1564,6 @@ F 3 "" H 10300 1000 60  0000 C CNN
 	1    10300 1000
 	1    0    0    -1  
 $EndComp
-Text Label 7950 5550 0    60   ~ 0
-~RW2
-$Comp
-L CONN_02X07 P2
-U 1 1 57235049
-P 1200 2050
-F 0 "P2" H 1200 2450 50  0000 C CNN
-F 1 "CONTROL" V 1200 2050 50  0000 C CNN
-F 2 "Pinheaders:Pin_Header_Straight_2x07" H 1200 850 60  0001 C CNN
-F 3 "" H 1200 850 60  0000 C CNN
-	1    1200 2050
-	1    0    0    -1  
-$EndComp
-Text Label 1450 2150 0    60   ~ 0
-~RW2
 $Comp
 L JUMPER3 JP12
 U 1 1 573AF883
@@ -1904,4 +1889,19 @@ Connection ~ 4300 6950
 Wire Wire Line
 	4850 6600 5100 6600
 Connection ~ 5100 6950
+Text Label 7950 5450 0    60   ~ 0
+A0
+Text Label 7950 5550 0    60   ~ 0
+A1
+$Comp
+L CONN_02X06 P2
+U 1 1 57500AFA
+P 1200 2000
+F 0 "P2" H 1200 2350 50  0000 C CNN
+F 1 "CONTROL" H 1200 1650 50  0000 C CNN
+F 2 "Pinheaders:Pin_Header_Straight_2x06" H 1200 800 60  0001 C CNN
+F 3 "" H 1200 800 60  0000 C CNN
+	1    1200 2000
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC
