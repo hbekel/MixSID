@@ -2,13 +2,14 @@ GAL16V8
 MIXSID1
 
 MS /IO1EN /IO2EN RW   /CS  /IO2 /IO1 A5   A8 GND
-PS CSI1   CSO1   CSI2 CSO2 /CS2 /CS1 /RW2 NC VCC
+PS CSI1   CSO1   CSI2 CSO2 /CS2 /CS1 A0 A1 VCC
 
 CSO1 = MS * CS +
       /MS * CS * /A5 * /A8
       
-CSO2 = MS * CS * RW2 +
-       MS * CS * /RW2 * /RW +
+CSO2 = MS * CS * /RW +             
+       MS * CS * RW * A0 * A1 +
+       MS * CS * RW * /A0 * /A1 +
       /MS * CS * A5 +
       /MS * CS * A8 +
       /MS * IO1EN * IO1 +
