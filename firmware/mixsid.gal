@@ -21,6 +21,9 @@ CS2 = PS * CSI2 +
 
 DESCRIPTION:
 
+MixSID chip select logic
+Compile with GALasm (https://github.com/daveho/GALasm)
+
 A0, A1, A5, A8, IO1, IO2, RW, CS  = C64 input signals
 MS, PS, IO1EN, IO2EN              = control signals
 CS1, CS2                          = chip select outputs

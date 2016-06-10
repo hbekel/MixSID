@@ -2,7 +2,7 @@ The MixSID board features on-board output circuits for both sids
 as well as an audio mixer that controls which signals finally end up
 at the stereo output pins.
 
-Two control signals (M0 and M1) will be provided that control the
+Two control signals (M0 and M1) are provided that control the
 different mixing options:
 
  M0 | M1 | Left | Right

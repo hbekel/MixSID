@@ -1,5 +1,5 @@
-Stereo addressing scheme of the MixSID dual SID solution for the C64 
-====================================================================
+Stereo addressing scheme of the MixSID stereo SID board for the C64
+===================================================================
 
 There are four address control lines in this scheme, although only
 one line is strictly required for basic operation of SID2 at the most
@@ -12,9 +12,6 @@ finally the IO ENABLE (IO1EN/IO2EN) lines control whether or not the
 second SID appears at $DE00 or $DF00 when in stereo addressing mode
 (given that the corresponding signals IO1 and IO2 are connected at
 all).
-
-In addition, the RW2 line controls whether the second SID is
-write-only or read-write when in parallel addressing mode.
 
 MODE SELECT
 ===========
@@ -30,8 +27,7 @@ each 32 bytes in $D400-D800 (as usual).
 In addition, SID2 will *only* be selected if RW is low, so the second
 sid will always be write-only when it appears in parallel with
 SID1. This way read accesses (for paddles and music effects) will only
-ever read from SID1, while SID2 completely ignores read accesses. This
-can be optionally disabled using the RW2 line.
+ever read from SID1, while SID2 completely ignores read accesses.
 
 Orthogonal (Stereo) Addressing Mode
 ==========================
@@ -118,18 +114,18 @@ Paddle Support
 ==============
 
 Paddles simply work regardless of the current MODE and PRIORITY
-settings, as long as the RW2 line is HIGH so that the secondary SID is
-forced write-only. The paddle lines are always routed to the SID
+settings, since the secondary SID is forced write-only in parallel
+addressing mode. The paddle lines are always routed to the SID
 currently addressed at $d400.
 
 Rationale
 =========
 
 This solution removes the need for multiple jumper configurations to
-select the adress of SID2, which have to be changed manually (via
-jumpers or (rotary) switches), or controlled with additional custom
-hardware which multiplexes the lines accordingly (e.g. virtualizing
-the jumper settings).
+select the address of SID2, which would have to be changed manually
+(via jumpers or (rotary) switches), or controlled with additional
+custom hardware which multiplexes the lines accordingly
+(e.g. virtualizing the jumper settings).
 
 Instead, all lines are digital control lines. If they are not
 connected, they are driven high by the internal pullups of the
