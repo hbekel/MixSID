@@ -1889,10 +1889,6 @@ Connection ~ 4300 6950
 Wire Wire Line
 	4850 6600 5100 6600
 Connection ~ 5100 6950
-Text Label 7950 5450 0    60   ~ 0
-A0
-Text Label 7950 5550 0    60   ~ 0
-A1
 $Comp
 L CONN_02X06 P2
 U 1 1 57500AFA

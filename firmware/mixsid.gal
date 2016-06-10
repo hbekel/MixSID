@@ -2,14 +2,12 @@ GAL16V8
 MIXSID1
 
 MS /IO1EN /IO2EN RW   /CS  /IO2 /IO1 A5 A8 GND
-PS CSI1   CSO1   CSI2 CSO2 /CS2 /CS1 A1 A0 VCC
+PS CSI1   CSO1   CSI2 CSO2 /CS2 /CS1 NC NC VCC
 
 CSO1 = MS * CS +
       /MS * CS * /A5 * /A8
       
 CSO2 = MS * CS * /RW +             
-       MS * CS * RW * A0 * A1 +
-       MS * CS * RW * /A0 * /A1 +
       /MS * CS * A5 +
       /MS * CS * A8 +
       /MS * IO1EN * IO1 +
@@ -24,7 +22,7 @@ CS2 = PS * CSI2 +
 DESCRIPTION:
 
 A0, A1, A5, A8, IO1, IO2, RW, CS  = C64 input signals
-MS, PS, IO1EN, IO2EN,             = control signals
+MS, PS, IO1EN, IO2EN              = control signals
 CS1, CS2                          = chip select outputs
 
 CSO1, CSO2 -> connect externally to CSI1, CSI2
