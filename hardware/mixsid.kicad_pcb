@@ -1,4 +1,4 @@
-(kicad_pcb (version 4) (host pcbnew 4.0.0-rc2-stable)
+(kicad_pcb (version 4) (host pcbnew 4.0.1-stable)
 
   (general
     (links 206)
@@ -2426,11 +2426,6 @@
       (net 56 /S1OUT))
     (pad 2 thru_hole circle (at 1.27 0 180) (size 1.397 1.397) (drill 0.8128) (layers *.Cu *.Mask F.SilkS)
       (net 84 /MONO_OUT))
-    (model Discret.3dshapes/R1.wrl
-      (at (xyz 0 0 0))
-      (scale (xyz 1 1 1))
-      (rotate (xyz 0 0 0))
-    )
   )
 
   (module Pinheaders:R1 (layer F.Cu) (tedit 573EEEF8) (tstamp 573B193F)
@@ -2450,11 +2445,6 @@
       (net 57 /S2OUT))
     (pad 2 thru_hole circle (at 1.27 0) (size 1.397 1.397) (drill 0.8128) (layers *.Cu *.Mask F.SilkS)
       (net 84 /MONO_OUT))
-    (model Discret.3dshapes/R1.wrl
-      (at (xyz 0 0 0))
-      (scale (xyz 1 1 1))
-      (rotate (xyz 0 0 0))
-    )
   )
 
   (module Pinheaders:R1 (layer F.Cu) (tedit 573EEEF8) (tstamp 573B193A)
