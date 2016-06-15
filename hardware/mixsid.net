@@ -1,7 +1,7 @@
 (export (version D)
   (design
     (source C:/cygwin/home/hb/workspace/mixsid/hardware/mixsid.sch)
-    (date "10.06.2016 09:18:06")
+    (date "15.06.2016 10:47:48")
     (tool "Eeschema 4.0.0-rc2-stable")
     (sheet (number 1) (name /) (tstamps /)
       (title_block
