@@ -1,11 +1,11 @@
 (kicad_pcb (version 4) (host pcbnew 4.0.0-rc2-stable)
 
   (general
-    (links 206)
+    (links 0)
     (no_connects 0)
     (area 128.194999 67.234999 190.575001 124.789001)
     (thickness 1.6)
-    (drawings 81)
+    (drawings 79)
     (tracks 1139)
     (zones 0)
     (modules 76)
@@ -1081,9 +1081,14 @@
     (pad 16 thru_hole oval (at 7.62 0) (size 1.6 1.6) (drill 0.8) (layers *.Cu *.Mask F.SilkS)
       (net 29 VCC))
     (model Housings_DIP.3dshapes/DIP-16_W7.62mm.wrl
-      (at (xyz 0 0 0))
+      (at (xyz 0 0 0.1))
       (scale (xyz 1 1 1))
       (rotate (xyz 0 0 0))
+    )
+    (model ${KIPRJMOD}/packages3d/DIP16.wrl
+      (at (xyz 0.15 -0.35 0))
+      (scale (xyz 1 1 1))
+      (rotate (xyz 0 0 90))
     )
   )
 
@@ -1303,6 +1308,11 @@
       (net 57 /S2OUT))
     (pad 28 thru_hole oval (at 15.24 0) (size 1.6 1.6) (drill 0.8) (layers *.Cu *.Mask F.SilkS)
       (net 85 /PWR2))
+    (model ${KIPRJMOD}/packages3d/DIP28-600-without-middle-and-bottom-bar.wrl
+      (at (xyz 0.3 -0.65 0))
+      (scale (xyz 1 1 1))
+      (rotate (xyz 0 0 90))
+    )
     (model Housings_DIP.3dshapes/DIP-28_W15.24mm.wrl
       (at (xyz 0 0 0.1))
       (scale (xyz 1 1 1))
@@ -1392,6 +1402,11 @@
       (net 56 /S1OUT))
     (pad 28 thru_hole oval (at 15.24 0) (size 1.6 1.6) (drill 0.8) (layers *.Cu *.Mask F.SilkS)
       (net 86 /PWR1))
+    (model ${KIPRJMOD}/packages3d/DIP28-600-without-middle-bar.wrl
+      (at (xyz 0.3 -0.65 0))
+      (scale (xyz 1 1 1))
+      (rotate (xyz 0 0 90))
+    )
     (model Housings_DIP.3dshapes/DIP-28_W15.24mm.wrl
       (at (xyz 0 0 0.1))
       (scale (xyz 1 1 1))
@@ -1441,9 +1456,14 @@
     (pad 8 thru_hole oval (at 7.62 0 270) (size 1.6 1.6) (drill 0.8) (layers *.Cu *.Mask F.SilkS)
       (net 29 VCC))
     (model Housings_DIP.3dshapes/DIP-8_W7.62mm.wrl
-      (at (xyz 0 0 0))
+      (at (xyz 0 0 0.1))
       (scale (xyz 1 1 1))
       (rotate (xyz 0 0 0))
+    )
+    (model ${KIPRJMOD}/packages3d/DIP8.wrl
+      (at (xyz 0.15 -0.15 0))
+      (scale (xyz 1 1 1))
+      (rotate (xyz 0 0 90))
     )
   )
 
@@ -2445,6 +2465,11 @@
       (net 57 /S2OUT))
     (pad 2 thru_hole circle (at 1.27 0) (size 1.397 1.397) (drill 0.8128) (layers *.Cu *.Mask F.SilkS)
       (net 84 /MONO_OUT))
+    (model ${KIPRJMOD}/packages3d/SIL4.wrl
+      (at (xyz 0.1 0.15 -0.05))
+      (scale (xyz 1 1 1))
+      (rotate (xyz 0 0 0))
+    )
   )
 
   (module Pinheaders:R1 (layer F.Cu) (tedit 573EEEF8) (tstamp 573B193A)
@@ -3321,13 +3346,7 @@
     )
   )
 
-  (gr_text "©2016 Henning Bekel" (at 132.715 97.79 90) (layer F.SilkS)
-    (effects (font (size 0.75 0.75) (thickness 0.15)))
-  )
-  (gr_text 1 (at 179.197 116.205) (layer F.SilkS)
-    (effects (font (size 0.75 0.75) (thickness 0.15)))
-  )
-  (gr_text 2 (at 168.148 116.205) (layer F.SilkS)
+  (gr_text "Testing & Feedback by c0zmo, G.I.-Joe, GMP and Meikel" (at 132.715 97.79 90) (layer F.SilkS)
     (effects (font (size 0.75 0.75) (thickness 0.15)))
   )
   (gr_text GND (at 173.736 72.39) (layer F.SilkS)
@@ -3449,7 +3468,7 @@
   )
   (gr_line (start 137.41 75.708) (end 137.029 76.089) (angle 90) (layer F.SilkS) (width 0.2))
   (gr_line (start 129.79 75.708) (end 130.171 76.089) (angle 90) (layer F.SilkS) (width 0.2))
-  (gr_text "MixSID Stereo SID Board Rev.1" (at 129.159 97.79 90) (layer F.SilkS)
+  (gr_text "MixSID Stereo SID Board Rev.1 ©2016 Henning Bekel" (at 129.159 97.79 90) (layer F.SilkS)
     (effects (font (size 0.75 0.75) (thickness 0.15)))
   )
   (gr_text "BOARD SELECT" (at 161.925 117.475) (layer F.SilkS)
@@ -3473,7 +3492,7 @@
   (gr_text L (at 180.34 120.65) (layer F.SilkS)
     (effects (font (size 0.75 0.75) (thickness 0.15)))
   )
-  (gr_text "STEREO OUT" (at 184.785 118.618) (layer F.SilkS)
+  (gr_text "AUDIO OUT" (at 184.785 118.618) (layer F.SilkS)
     (effects (font (size 0.75 0.75) (thickness 0.15)))
   )
   (gr_text NR1 (at 169.545 78.232) (layer F.SilkS)
