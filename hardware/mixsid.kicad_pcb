@@ -1,4 +1,4 @@
-(kicad_pcb (version 4) (host pcbnew 4.0.1-stable)
+(kicad_pcb (version 4) (host pcbnew 4.0.2-stable)
 
   (general
     (links 206)
@@ -14,9 +14,9 @@
 
   (page A4)
   (title_block
-    (title "MixSID - C64 Stereo SID adapter")
-    (date 2016-06-02)
-    (rev 5)
+    (title "MixSID - C64 Stereo SID board")
+    (date 2016-06-27)
+    (rev 1)
     (company "Henning Bekel")
   )
 
