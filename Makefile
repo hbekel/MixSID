@@ -8,7 +8,10 @@ ifeq ($(UNAME), Darwin)
   MD5SUM=md5 -r
 endif
 
-all: release
+all: nomake
+
+nomake:
+	@echo "This Makefile is only used to create release files"
 
 firmware-target:
 	make -C firmware/
