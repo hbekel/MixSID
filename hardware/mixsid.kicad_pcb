@@ -3,7 +3,7 @@
   (general
     (links 206)
     (no_connects 0)
-    (area 127.245476 36.52 229.488 135.575)
+    (area 128.194999 67.234999 190.575001 124.789001)
     (thickness 1.6)
     (drawings 79)
     (tracks 1139)
@@ -3346,7 +3346,7 @@
     )
   )
 
-  (gr_text "Testing & Feedback by c0zmo, GI-Joe, GMP and Meikel" (at 132.715 97.79 90) (layer F.SilkS)
+  (gr_text "Testing & Feedback by C0zmo, GI-Joe and GMP" (at 132.715 97.79 90) (layer F.SilkS)
     (effects (font (size 0.75 0.75) (thickness 0.15)))
   )
   (gr_text GND (at 173.736 72.39) (layer F.SilkS)
