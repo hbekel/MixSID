@@ -1,0 +1,5 @@
+This is a small programm that looks for a SID at the relevant
+locations and reports the SID model found at those locations (if
+any). It will work on both C64 and C128.
+
+Use "SYS 5376" to run.

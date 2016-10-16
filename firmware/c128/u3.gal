@@ -1,0 +1,35 @@
+GAL16V8
+C128U3N
+
+A8 A9 A11  /U31  /IOCS NC   IO2O NC   NC   GND
+NC NC /IO1 /CIA2 /CIA1 /C64 /VDC /IO2 /SID VCC
+
+SID  =  C64 * U31 * IOCS * /A11 * /A9 +
+       /C64 * U31 * IOCS * /A11 * /A9 * /A8	
+	
+VDC  = U31 * IOCS * /A11 *  A9 * /A8
+CIA1 = U31 * IOCS *  A11 * /A9 * /A8 
+CIA2 = U31 * IOCS *  A11 * /A9 *  A8
+IO1  = U31 * IOCS *  A11 *  A9 * /A8
+IO2  = U31 * IOCS *  A11 *  A9 *  A8
+
+DESCRIPTION:
+
+Replacement GAL for C128 U3 (Assy. 310378) that extends the SID CS
+signal to additionally cover $D500-$D5FF in C64 mode.
+
+For this purpose, the C64/C128 signal available at pin 15 of the PLA
+(U11) needs to be connected to pin 16 (/C64) of this GAL.
+
+In addition, pin 18 needs to be connected to pin 7 to get the IO2
+signal out at the right pin (pin 7 cannot be used as output on a
+16V8).
+
+And finally, pin 8 at the GAL socket needs to be connected to pin 10
+for GND.
+
+For details, see the README file in this directory.
+
+Compile with GALasm (https://github.com/daveho/GALasm)
+
+

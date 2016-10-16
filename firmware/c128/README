@@ -1,0 +1,69 @@
+!! NOTE: THIS IS NOT THE FIRMWARE FOR THE GAL ON THE MIXSID ITSELF !!
+
+Regardless of which machine the MixSID is installed to, its own GAL
+chip uses the same logic (firmware/mixsid.gal).
+
+The GAL logic in this directory (firmware/c128/u3.gal) is intended to
+replace the 74LS138 multiplexer at U3 in a C128 flat case or C128D
+plastic case mainboard (Assy. 310378) in order to make the secondary
+SID appear at $d500 in stereo addressing mode while in C64 mode.
+
+In more general terms, this modification extends the SID CS signal
+created by U3 to additionally cover $D500-$D5FF in C64 mode.
+
+On a plain C64, the SID occupies a large address range from $D400 to
+$D7FF. The SID appears mirrored every 32 bytes in this area. This
+allows stereo sid boards to simply decode the address for the second
+SID based on the mainboards SID CS signal and just two additional
+address lines (most likely A5 and A8) in order to further divide this
+IO area and to place the second SID at either $D420 or $D500 (the most
+common addresses used by stereo tunes).
+
+But on a C128, the SID CS signal is only asserted in the range
+$D400-$D4FF in both C128 and C64 mode. This was done because in C128
+mode, the MMU appears at $D500 and the VDC appears at $D600. In C64
+mode, the MMU is not visible, while the VDC is still visible at
+$D600. Because the SID CS signal is never asserted for $D500-$D5FF in
+either mode (even though this area is free in C64 mode), a second SID
+will simply not appear at $D500 in C64 mode, rendering any common
+stereo SID board useless for playing back stereo tunes at $D500 on a
+C128 in C64 mode.
+
+Although it would be possible for a stereo SID board to decode the
+$d500 area on its own (without relying on the already decoded SID CS
+signal), it would be much more complicated and involve additional
+address lines for the user to connect.
+
+Therefore the only practival way to get the second SID on $D500 in C64
+is to extend the C128 SID CS logic to include $D500-$D5FF with this
+little hack.
+
+In order to apply this hack, the 74LS128 on U3 needs to be replaced
+with a 16V8 GAL.
+
+First remove the 74LS138 and the ceramic capatitor (C3) above.
+
+Solder in a small 100nF capacitor on the bottom side of the PCB to
+replace C3.
+
+Then prepare a 20 pin precision socket by cutting the lower two pins
+on both sides so that it can be inserted in place of the 16 pin
+74LS138. Also connect Pin 8 of the socket to pin 10 in order to supply
+GND to the GAL. It's ok to include pin 9 as well, since it is not
+connected in this GAL setup.
+
+Then solder in the socket and add two additional wires on the bottom
+side.
+
+Add a wire to connect pin 16 of the GAL to pin 15 of the 8721 (U11).
+
+Add a second wire to connect pin 18 to pin 7 of the GAL. This is
+required to get the IO2 signal out at the same place.
+
+Now program and insert the GAL into the socket. If all went well, both
+C128 and C64 mode should work as usual. If you have a stereo SID board
+installed, configure it to place the second SID at $D500. You should
+now be able to play stereo tunes using the second SID at $D500 in C64
+mode.
+
+
