@@ -1,30 +1,34 @@
-all: mixsid.zip
+PROJECT=mixsid
+REVISION=1
+ZIPFILE=$(PROJECT)-gerber-r$(REVISION).zip
 
-FILES=mixsid.drl\
-	mixsid.gbl\
-	mixsid.gbs\
-	mixsid.gml\
-	mixsid.gtl\
-	mixsid.gto\
-	mixsid.gts
+all: $(ZIPFILE)
+
+FILES=$(PROJECT).drl\
+	$(PROJECT).gbl\
+	$(PROJECT).gbs\
+	$(PROJECT).gml\
+	$(PROJECT).gtl\
+	$(PROJECT).gto\
+	$(PROJECT).gts
 
 rename:
-	$(shell [[ -f mixsid-B.Cu.gbl ]] && mv mixsid-B.Cu.gbl mixsid.gbl)
-	$(shell [[ -f mixsid-B.Mask.gbs ]] && mv mixsid-B.Mask.gbs mixsid.gbs)
-	$(shell [[ -f mixsid-F.Cu.gtl ]] && mv mixsid-F.Cu.gtl mixsid.gtl)
-	$(shell [[ -f mixsid-F.Mask.gts ]] && mv mixsid-F.Mask.gts mixsid.gts)
-	$(shell [[ -f mixsid-F.SilkS.gto ]] && mv mixsid-F.SilkS.gto mixsid.gto)
-	$(shell [[ -f mixsid-Edge.Cuts.gm1 ]] && mv mixsid-Edge.Cuts.gm1 mixsid.gml)
-	$(shell chmod -x mixsid*)
+	$(shell [ -f $(PROJECT)-B.Cu.gbl ] && mv $(PROJECT)-B.Cu.gbl $(PROJECT).gbl)
+	$(shell [ -f $(PROJECT)-B.Mask.gbs ] && mv $(PROJECT)-B.Mask.gbs $(PROJECT).gbs)
+	$(shell [ -f $(PROJECT)-F.Cu.gtl ] && mv $(PROJECT)-F.Cu.gtl $(PROJECT).gtl)
+	$(shell [ -f $(PROJECT)-F.Mask.gts ] && mv $(PROJECT)-F.Mask.gts $(PROJECT).gts)
+	$(shell [ -f $(PROJECT)-F.SilkS.gto ] && mv $(PROJECT)-F.SilkS.gto $(PROJECT).gto)
+	$(shell [ -f $(PROJECT)-Edge.Cuts.gm1 ] && mv $(PROJECT)-Edge.Cuts.gm1 $(PROJECT).gml)
+	$(shell chmod -x $(PROJECT)*)
 
-mixsid.zip:
-	zip mixsid.zip $(FILES)
-	chmod -x mixsid.zip
+$(ZIPFILE): rename $(FILES)
+	zip $@ $(FILES)
+	chmod -x $@
 
 dirty: rename
-	mv mixsid.drl mixsid.txt
-	zip mixsid.zip $(FILES) mixsid.txt
-	mv mixsid.txt mixsid.drl
+	mv $(PROJECT).drl $(PROJECT).txt
+	zip $(ZIPFILE) $(FILES) $(PROJECT).txt
+	mv $(PROJECT).txt $(PROJECT).drl
 
 clean:
-	rm -f mixsid.zip
+	rm -f $(ZIPFILE)
